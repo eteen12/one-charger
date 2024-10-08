@@ -1,21 +1,21 @@
 import React from "react";
-import EmailButton from "./emailButton";
+import EmailButton from "./reusables/emailButton";
 
 export default function ComingSoon() {
   return (
     <div className="bg-gray-200 font-sans leading-normal tracking-normal">
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="bg-white ">
+        <div className="container mx-auto px-4 py-20">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6 text-black">
               Literally One Charger
             </h1>
-            <p className="text-gray-600 mb-12">
+            <p className="text-gray-600 mb-12 ">
               Enter your email for an update when we launch. One charger will
               change your life forever.
             </p>
 
-            <EmailButton />
+            <EmailButton borderRadius="email-border" />
           </div>
         </div>
       </section>
@@ -32,14 +32,14 @@ export default function ComingSoon() {
             <p className="text-gray-600 mb-12">
               Get ready for the ultimate charging experience! In the heart of
               Kelowna, where the Okanagan Valley sunshine meets innovation, we
-              are bringing you the only charger you'll ever need. Forget about
-              juggling multiple chargers for your devices—this is the{" "}
+              are bringing you the only charger you&apos;ll ever need. Forget
+              about juggling multiple chargers for your devices—this is the{" "}
               <strong>one charger</strong> to rule them all!
             </p>
           </div>
           <div className="flex flex-wrap -mx-4 mt-12">
             <div className="w-full md:w-1/3 px-4 mb-8">
-              <div className="rounded-md bg-white shadow-md p-8">
+              <div className="rounded-3xl bg-white shadow-md p-8">
                 <div className="text-4xl font-bold text-purple-600 mb-4">
                   Literally
                 </div>
@@ -53,7 +53,7 @@ export default function ComingSoon() {
               </div>
             </div>
             <div className="w-full md:w-1/3 px-4 mb-8">
-              <div className="rounded-md bg-white shadow-md p-8">
+              <div className="rounded-3xl bg-white shadow-md p-8">
                 <div className="text-4xl font-bold text-purple-600 mb-4">
                   One
                 </div>
@@ -67,8 +67,8 @@ export default function ComingSoon() {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/3 px-4 mb-8">
-              <div className="rounded-md bg-white shadow-md p-8">
+            <div className="w-full md:w-1/3 px-4 mb-8 ">
+              <div className="rounded-3xl bg-white shadow-md p-8 ">
                 <div className="text-4xl font-bold text-purple-600 mb-4">
                   Charger
                 </div>

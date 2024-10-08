@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "/src/app/globals.css";
 
-export default function EmailButton() {
+export default function EmailButton({ borderRadius }) {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -31,15 +31,19 @@ export default function EmailButton() {
       }
       await response.json();
       setSuccess("Thanks for subscribing!");
-      setError(null);
+      setError("");
       setIsActive(true);
     } catch (error) {
-      setSuccess(`Failed to subscribe: ${error.message}`);
-      setSuccess(null);
+      setError(`Failed to subscribe: ${error.message}`);
+      setSuccess("");
       setIsActive(false);
     }
     setEmail("");
-    
+    setTimeout(() => {
+      setIsActive(false);
+      setError(null);
+      setSuccess(null);
+    }, 2000);
   };
 
   return (
@@ -66,25 +70,21 @@ export default function EmailButton() {
         />
         <button
           type="submit"
-
-          className={`absolute right-0 top-0 h-full text-sm montserrat text-black bg-purple-600 transition-all duration-700 ${
-            isActive
-              ? "w-full rounded-full"
-              : "w-[35%] rounded-full  rounded-bl-none"
+          className={`absolute right-0 top-0 h-full text-sm montserrat text-white bg-purple-600 transition-all duration-700 font-bold ${
+            isActive ? "w-full rounded-full" : `w-[35%] ${borderRadius}`
           }`}
-          style={{ "--font-weight": "700" }}
         >
           {isActive ? "Thanks!" : "Subscribe"}
         </button>
       </div>
-      <div className="relative h-2" aria-live="polite">
+      <div className="relative mt-2" aria-live="polite">
         {error && (
           <p className="absolute inset-0 text-red-500 text-xs text-center">
             {error}
           </p>
         )}
         {success && (
-          <p className="absolute inset-0 teletaGreen text-xs text-center">
+          <p className="absolute inset-0 text-green-500 text-xs text-center">
             {success}
           </p>
         )}

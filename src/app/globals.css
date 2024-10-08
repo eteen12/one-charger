@@ -6,7 +6,13 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+/*for email button*/
+.email-border {
+  border-radius: 80px 50px 50px 0px;
+}
+.footer-border{
+  border-radius: 70px 50px 50px 0px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
