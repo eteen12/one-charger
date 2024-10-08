@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.literallyOneCharger.com"
+        }
+      ],
+      "destination": "https://literallyOneCharger.com/$1",
+      "permanent": true
+    }
+  ]
+}

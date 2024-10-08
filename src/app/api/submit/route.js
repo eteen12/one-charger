@@ -13,7 +13,7 @@ export async function POST(request) {
   }
 
   try {
-    const subscriber = await prisma.userEntry.create({
+    const subscriber = await prisma.UserEntry.create({
       data: {
         email,
       },
@@ -30,6 +30,7 @@ export async function POST(request) {
         headers: { "Content-Type": "application/json" },
       });
     }
+    console.error("Server error:", error);
     return new Response(JSON.stringify({ error: "Something went wrong" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },

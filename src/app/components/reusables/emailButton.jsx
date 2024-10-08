@@ -28,8 +28,10 @@ export default function EmailButton({ borderRadius }) {
           errorResponse.error ||
             "Something went wrong, if you really care just email me."
         );
+      } else {
+        setEmail("");
       }
-      await response.json();
+      const data = await response.json();
       setSuccess("Thanks for subscribing!");
       setError("");
       setIsActive(true);
