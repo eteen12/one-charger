@@ -26,8 +26,8 @@ export const metadata = {
     title: "Literally One Charger",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
-    url: "https://www.LiterallyOneCharger.com",
-    image: "https://www.LiterallyOneCharger.com/one.png", // Update the image URL if necessary
+    url: "https://www.LiterallyOneCharger.ca",
+    image: "https://www.LiterallyOneCharger.ca/one.png", // Update the image URL if necessary
     type: "website",
   },
   twitter: {
@@ -35,16 +35,16 @@ export const metadata = {
     title: "Literally One Charger",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
-    image: "https://www.LiterallyOneCharger.com/one.png",
+    image: "https://www.LiterallyOneCharger.ca/one.png",
   },
   schema: {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Literally One Charger",
-    url: "https://www.LiterallyOneCharger.com",
+    url: "https://www.LiterallyOneCharger.ca",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
-    image: "https://www.LiterallyOneCharger.com/logoShare.jpg", // Update the image URL if necessary
+    image: "https://www.LiterallyOneCharger.com/oa.png", // Update the image URL if necessary
     sameAs: [
       "https://www.facebook.com/EthanBreitkreutz", // Update these links as necessary
       "https://www.instagram.com/ethan_breitkreutz/",
@@ -53,7 +53,7 @@ export const metadata = {
     potentialAction: {
       "@type": "SearchAction",
       target:
-        "https://www.LiterallyOneCharger.com/search?q={search_term_string}",
+        "https://www.LiterallyOneCharger.ca/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   },
@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="apple-mobile-web-app-title" content="A Charger" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="apple-mobile-web-app-title" content="Teleta." />
+        <meta name="apple-mobile-web-app-title" content="A Charger." />
         <link rel="manifest" href="/favicon/site.webmanifest" />
 
         <meta name="description" content={metadata.description} />
