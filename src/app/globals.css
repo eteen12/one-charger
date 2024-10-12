@@ -10,10 +10,12 @@
 .email-border {
   border-radius: 80px 50px 50px 0px;
 }
-.footer-border{
+.footer-border {
   border-radius: 70px 50px 50px 0px;
 }
-
+.lightGrayBg {
+  background-color: #D9D9D9;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

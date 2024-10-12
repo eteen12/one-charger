@@ -31,7 +31,7 @@ export default function NavBurger() {
       {/* Mobile Menu */}
       <div
         className={classNames(
-          "fixed top-16 left-0 w-full h-screen whiteColorBg transition-opacity duration-500 ease-in-out flex flex-col",
+          "fixed top-16 left-0 w-full h-screen bg-white transition-opacity duration-500 ease-in-out flex flex-col",
           {
             "opacity-100 pointer-events-auto": opened,
             "opacity-0 pointer-events-none": !opened,
@@ -77,7 +77,7 @@ export default function NavBurger() {
         </ul>
         <div className="flex justify-center mt-10">
           <button
-            className="blueColorBg hover:red text-white py-3 px-[35%] rounded-full poppins shadow-lg"
+            className="blueColorBg hover:red bg-blue py-3 px-[35%] rounded-full poppins shadow-lg"
             style={{ "--font-weight": "600" }}
           >
             Button
