@@ -1,26 +1,25 @@
 import { LuMailbox } from "react-icons/lu";
+import { MdDevicesOther } from "react-icons/md";
+import { TbUserQuestion } from "react-icons/tb";
 
 const incentives = [
   {
-    name: "Free shipping",
-    icon:
-    <LuMailbox />,
+    name: "Shipping",
+    icon: <LuMailbox className="text-5xl text-black"/>,
     description:
-      "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+      "Shipping from Kelowna to anywhere in Canada. Shipping via Canada Post lettermail. Although this site is a joke, I will ship a brand new charger to you.",
   },
   {
-    name: "10-year warranty",
-    icon:
-      "https://tailwindui.com/plus/img/ecommerce/icons/icon-warranty-simple.svg",
+    name: "Compatibility",
+    icon: <MdDevicesOther className="text-5xl text-black"/>,
     description:
-      "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+      "Im proud to announce that this charger is compatible with type C devices only. Pretty lame, sorry.",
   },
   {
-    name: "Exchanges",
-    icon:
-      "https://tailwindui.com/plus/img/ecommerce/icons/icon-exchange-simple.svg",
+    name: "Is it actually any good?",
+    icon: <TbUserQuestion className="text-5xl text-black"/>,
     description:
-      "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+      "In all honesty, its pretty good. It charges your phone. It's a charger. It's a good charger. I use it to charge my phone.",
   },
 ];
 
@@ -50,23 +49,28 @@ export default function Incentives() {
               />
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-            {incentives.map((incentive) => (
-              <div key={incentive.name} className="sm:flex lg:block">
-                <div className="sm:flex-shrink-0">
-                 
-                </div>
-                <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    {incentive.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {incentive.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+  <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+    {incentives.map((incentive) => (
+      <div key={incentive.name} className="flex flex-col">
+        <dt className="text-base font-semibold leading-7 text-gray-900">
+          <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+            {incentive.icon}
           </div>
+          {incentive.name}
+        </dt>
+        <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+          <p className="flex-auto">{incentive.description}</p>
+          <p className="mt-6">
+            <a href={incentive.href} className="text-sm font-semibold leading-6 text-indigo-600">
+              Learn more <span aria-hidden="true">→</span>
+            </a>
+          </p>
+        </dd>
+      </div>
+    ))}
+  </dl>
+</div>
         </div>
       </div>
     </div>
