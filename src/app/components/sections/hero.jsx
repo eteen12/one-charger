@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="relative w-[100vw] h-[100vh] max-w-[500px] max-h-[500px]">
         <Image
           src={HeroImage}
-          className="object-contain"
+          className="object-cover"
           alt="Background Image"
           priority
           role="img"

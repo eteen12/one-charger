@@ -5,7 +5,7 @@ export default function NavBarClient() {
   return (
     <header
       className={
-        "flex justify-between items-center fixed w-full h-16 z-50 transition-all duration-700 text-black "
+        "flex justify-between items-center fixed w-full h-16 z-50 transition-all duration-700 text-black bg-white"
       }
     >
       <NavBarServer />
