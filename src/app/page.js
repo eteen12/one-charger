@@ -1,7 +1,7 @@
-import ComingSoon from "./components/comingsoon";
+import React from "react";
+
+import Hero from "./components/sections/hero";
 
 export default function Home() {
-  return (
-    <ComingSoon />
-  );
+  return <Hero />;
 }
