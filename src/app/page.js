@@ -1,7 +1,7 @@
 import React from "react";
 
-import Hero from "./components/sections/hero";
-import Cta1 from "./components/reusables/cta1";
+import Hero from "../components/sections/hero";
+import Cta1 from "../components/reusables/cta1";
 
 export default function Home() {
   return (

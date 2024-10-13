@@ -5,7 +5,7 @@ import Logo from "/public/navBar/logo.svg";
 
 export default function NavBarServer() {
   return (
-    <nav className="flex justify-between items-center shadow-lg z-50 h-16 fixed w-[100%] px-5 lg:px-8 xl:px-12 2xl:px-20">
+    <nav className="flex justify-between items-center  z-50 h-16 fixed w-[100%] px-5 lg:px-8 xl:px-12 2xl:px-20">
       <Link href="/" aria-label="Go to Plumbing homepage">
         <div className="relative w-16 h-16 flex">
           <Image
@@ -21,7 +21,7 @@ export default function NavBarServer() {
         <NavBurger />
       </div>
       <div
-        className="hidden sm:flex items-center px-2 darkColor dm-sans"
+        className="hidden sm:flex items-center px-2 darkColor raleway"
         style={{ "--font-weight": "600" }}
       >
         <ul className="flex items-center">

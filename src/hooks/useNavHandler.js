@@ -14,6 +14,7 @@ export function useNavHandler() {
         setScrollingDown(false);
         setLastScrollTop(currentScroll);
         setBackground("transparent");
+        setShadow("none");
         return;
       }
 

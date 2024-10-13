@@ -3,12 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-mohave: "Mohave", sans-serif;
+  --background: #d9d9d9;
+  --foreground: #2b2b2b;
+  --font-mohave: "Raleway", sans-serif;
 }
 .mohave {
   font-family: var(--font-mohave);
+  font-weight: var(--font-weight);
+}
+.raleway {
+  font-family: var(--font-raleway);
   font-weight: var(--font-weight);
 }
 .lightGrayBg {
@@ -24,21 +28,9 @@
 .darkText {
   color: #2b2b2b;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  font-family: var(--font-raleway), Arial, Helvetica, sans-serif;
 }

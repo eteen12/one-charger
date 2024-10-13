@@ -1,10 +1,16 @@
-import { Mohave } from "next/font/google";
+import { Mohave,Raleway } from "next/font/google";
 import "./globals.css";
-import NavBarClient from "./components/client/navBarClient";
+import NavBarClient from "../components/client/navBarClient";
 
 const mohave = Mohave({
   subsets: ["latin"],
   variable: "--font-mohave",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
   weight: ["300", "400", "500", "600", "700"],
 });
 

@@ -39,7 +39,7 @@ export default function NavBurger() {
         )}
       >
         <ul
-          className="flex flex-col items-start py-10 gap-8 text-2xl mohave darkColor "
+          className="flex flex-col items-start py-10 gap-8 text-2xl raleway darkColor "
           style={{ "--font-weight": "500" }}
         >
           <li className="py-2 w-full">
