@@ -59,53 +59,6 @@ export default function ProductFeatures() {
         <div aria-hidden="true" className="relative">
           <div className="absolute -inset-x-2 bottom-0 bg-gradient-to-t from-white via-white/70 to-transparent pt-[25%]" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl md:text-center">
-            <h2
-              className="text-base font-semibold leading-7 blueText raleway md:text-lg"
-              style={{
-                "--font-weight": "500",
-              }}
-            >
-              features
-            </h2>
-            <p
-              className="mt-2 text-3xl font-bold tracking-tighter sm:text-4xl mohave md:text-5xl"
-              style={{
-                "--font-weight": "800",
-              }}
-            >
-              ABOUT KELOWAS BEST CHARGER
-            </p>
-            <p className="mt-6 text-lg leading-8 raleway md:text-xl">
-              Dont care? I mean you should, but if you dont, here are some
-              features of our charger.
-            </p>
-          </div>
-        </div>
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-10 max-w-[1550px] md:grid-cols-3 p-5 mx-auto md:px-12 lg:px-40 pb-28">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="flex flex-col relative md:py-16 "
-            >
-              <dt
-                className="flex items-center gap-x-3 text-base leading-7 raleway md:text-lg "
-                style={{
-                  "--font-weight": "500",
-                }}
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg darkBg text-white text-xl">
-                  {feature.icon}
-                </div>
-                {feature.name}
-              </dt>
-              <dd className="mt-2 text-base leading-7 md:text-lg">
-                {feature.description}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </div>
   );
