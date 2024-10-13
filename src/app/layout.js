@@ -113,7 +113,6 @@ export default function RootLayout({ children }) {
       >
         <NavBarClient />
         {children}
-
       </body>
     </html>
   );
