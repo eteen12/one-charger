@@ -3,6 +3,8 @@ import React from "react";
 import Hero from "../components/sections/hero";
 import Cta1 from "../components/reusables/cta1";
 import ProductFeatures from "../components/sections/productFeatures";
+import Promo from "../components/sections/promo";
+import Content from "../components/sections/content";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <Cta1 />
       <ProductFeatures />
+      <Content />
+      <Promo />
     </div>
   );
 }
