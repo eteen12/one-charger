@@ -1,8 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
-
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function NavBurger() {
@@ -11,6 +11,14 @@ export default function NavBurger() {
   const handleToggle = () => {
     setOpened(!opened);
   };
+
+  // Define the menu items
+  const menuItems = [
+    { name: "Book online", href: "/" },
+    { name: "Services", href: "/" },
+    { name: "Projects", href: "/" },
+    { name: "Faq", href: "/" },
+  ];
 
   return (
     <>
@@ -31,7 +39,7 @@ export default function NavBurger() {
       {/* Mobile Menu */}
       <div
         className={classNames(
-          "fixed top-16 left-0 w-full h-screen bg-white transition-opacity duration-500 ease-in-out flex flex-col",
+          "fixed top-16 left-0 w-full h-screen lightGrayBg transition-opacity duration-500 ease-in-out flex flex-col",
           {
             "opacity-100 pointer-events-auto": opened,
             "opacity-0 pointer-events-none": !opened,
@@ -39,47 +47,24 @@ export default function NavBurger() {
         )}
       >
         <ul
-          className="flex flex-col items-start py-10 gap-8 text-2xl raleway darkColor "
+          className="flex flex-col items-start py-10 gap-8 text-2xl raleway darkColor"
           style={{ "--font-weight": "500" }}
         >
-          <li className="py-2 w-full">
-            <div className=" flex justify-between items-center">
-              <Link href="/" className="ml-6">
-                Book online
-              </Link>
-              <IoIosArrowForward className="mt-px mr-3 text-3xl" />
-            </div>
-          </li>
-          <li className="py-2 w-full">
-            <div className=" flex justify-between items-center">
-              <Link href="/" className="ml-6">
-                Services
-              </Link>
-              <IoIosArrowForward className="mt-px mr-3 text-3xl" />
-            </div>
-          </li>
-          <li className="py-2 w-full">
-            <div className=" flex justify-between items-center">
-              <Link href="/" className="ml-6">
-                Projects
-              </Link>
-              <IoIosArrowForward className="mt-px mr-3 text-3xl" />
-            </div>
-          </li>
-          <li className="py-2 w-full">
-            <div className=" flex justify-between items-center">
-              <Link href="/" className="ml-6">
-                Faq
-              </Link>
-              <IoIosArrowForward className="mt-px mr-3 text-3xl" />
-            </div>
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={index} className="py-2 w-full">
+              <div className="flex justify-between items-center">
+                <Link href={item.href} className="ml-6">
+                  {item.name}
+                </Link>
+                <IoIosArrowForward className="mt-px mr-3 text-3xl" />
+              </div>
+            </li>
+          ))}
         </ul>
         <div className="flex justify-center mt-10">
           <button
             type="button"
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 
-            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md blueBg px-20 py-2.5 text-lg text-white shadow-md hover:bg-teal-500 mohave tracking-wide"style={{ "--font-weight": "500" }}
           >
             Button text
           </button>

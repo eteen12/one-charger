@@ -22,7 +22,7 @@ export function useNavHandler() {
       setLastScrollTop(currentScroll);
 
       if (currentScroll > 10) {
-        setBackground("black");
+        setBackground("#55ddc9");
         setShadow("0px 2px 4px rgba(0, 0, 0, 0.8)");
       } else {
         setBackground("transparent");
