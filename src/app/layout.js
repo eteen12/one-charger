@@ -5,7 +5,7 @@ import NavBarClient from "./components/client/navBarClient";
 const mohave = Mohave({
   subsets: ["latin"],
   variable: "--font-mohave",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -103,9 +103,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.schema) }}
         />
       </head>
-      <body
-        className={`${mohave.variable} antialiased`}
-      >
+      <body className={`${mohave.variable} antialiased`}>
         <NavBarClient />
         {children}
       </body>

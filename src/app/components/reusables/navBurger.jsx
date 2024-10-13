@@ -39,8 +39,8 @@ export default function NavBurger() {
         )}
       >
         <ul
-          className="flex flex-col items-start py-10 gap-8 text-2xl dm-sans tracking-tight darkColor "
-          style={{ "--font-weight": "600" }}
+          className="flex flex-col items-start py-10 gap-8 text-2xl mohave darkColor "
+          style={{ "--font-weight": "500" }}
         >
           <li className="py-2 w-full">
             <div className=" flex justify-between items-center">
@@ -77,10 +77,11 @@ export default function NavBurger() {
         </ul>
         <div className="flex justify-center mt-10">
           <button
-            className="blueColorBg hover:red bg-blue py-3 px-[35%] rounded-full poppins shadow-lg"
-            style={{ "--font-weight": "600" }}
+            type="button"
+            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-500 
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Button
+            Button text
           </button>
         </div>
       </div>

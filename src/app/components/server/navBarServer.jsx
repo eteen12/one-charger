@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavBurger from "../reusables/navBurger";
-import Logo from "/public/logo.svg";
+import Logo from "/public/navBar/logo.svg";
 
 export default function NavBarServer() {
   return (
