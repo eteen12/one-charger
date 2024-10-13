@@ -5,19 +5,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-mohave: "Mohave", sans-serif;
+}
+.mohave {
+  font-family: var(--font-mohave);
+  font-weight: var(--font-weight);
 }
 .lightGrayBg {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 /*cta1*/
 .blueBg {
-  background-color: #55DDC9;
+  background-color: #55ddc9;
 }
-.darkBg{
-  background-color: #2B2B2B;
+.darkBg {
+  background-color: #2b2b2b;
 }
-.darkText{
-  color: #2B2B2B;
+.darkText {
+  color: #2b2b2b;
 }
 @media (prefers-color-scheme: dark) {
   :root {
