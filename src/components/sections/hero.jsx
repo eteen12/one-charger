@@ -5,7 +5,7 @@ import HeroDeskTop from "/public/hero/heroDesktop.png";
 
 export default function Hero() {
   return (
-    <div className="relative min-w-full min-h-screen flex items-center justify-center lightGrayBg">
+    <div className="relative min-w-full min-h-screen flex items-center justify-center bg-gray-50">
       <div className="relative w-[100vw] h-[100vh] max-w-[500px] max-h-[500px] md:hidden">
         <Image
           src={HeroMobile}

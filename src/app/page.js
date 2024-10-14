@@ -1,21 +1,16 @@
 import React from "react";
 
 import Hero from "../components/sections/hero";
-import Cta1 from "../components/reusables/cta1";
-import ProductFeatures from "../components/sections/productFeatures";
-import Promo from "../components/sections/promo";
-import Content from "../components/sections/content";
-
+import Cta1 from "@/components/sections/cta1";
+import Faq from "@/components/sections/faq";
 
 export default function Home() {
   return (
     <div className="z-40">
       <Hero />
       <Cta1 />
-      <ProductFeatures />
-      <Content />
-  
-      <Promo />
+
+      <Faq />
     </div>
   );
 }
