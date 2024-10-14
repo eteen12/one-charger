@@ -1,24 +1,27 @@
+import Image from "next/image";
+import VisualImage from "/public/visual/visualContentImage.png";
+
 export default function Visuals() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-gray-50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h3 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl mohaveHeader text-shadow">
+        <div className="mx-auto max-w-none text-center">
+          <h2 className="mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl mohaveHeader text-shadow">
             LIKE NO OTHER.
-          </h3>
+          </h2>
         </div>
       </div>
       <div className="relative overflow-hidden pt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            alt="App screenshot"
-            src="https://tailwindui.com/plus/img/component-images/project-app-screenshot.png"
-            width={2432}
-            height={1442}
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+          <Image
+            alt="Photo of 3 chargers lined up in a triangle shape"
+            src={VisualImage}
+            width={2865}
+            height={2398}
+            className="mb-[-12%] "
           />
           <div aria-hidden="true" className="relative">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]" />
+            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-50 pt-[15%]" />
           </div>
         </div>
       </div>

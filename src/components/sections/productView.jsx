@@ -1,6 +1,9 @@
 "use client";
 import "/src/app/globals.css";
 
+import Image from "next/image";
+import ProductImage from "/public/productView/productImage.png";
+
 import { useState } from "react";
 import {
   CheckIcon,
@@ -16,8 +19,7 @@ const product = {
   price: "$7",
   description:
     "Want a single charger that can charge any device? This is the one for you. It's small, light, and can charge anything. That is type C of course. IF you need a lighting cable, well, maybe ill make a website soon.",
-  imageSrc:
-    "https://tailwindui.com/plus/img/ecommerce-images/product-page-04-featured-product-shot.jpg",
+  imageSrc:  ProductImage,
   imageAlt:
     "Literally one charger on a white background with a USB-C connector.",
   breadcrumbs: [
@@ -42,7 +44,7 @@ export default function ProductView() {
   const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
         {/* Product details */}
         <div className="lg:max-w-lg lg:self-end">
@@ -136,7 +138,7 @@ export default function ProductView() {
         {/* Product image */}
         <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
-            <img
+            <Image
               alt={product.imageAlt}
               src={product.imageSrc}
               className="h-full w-full object-cover object-center"
