@@ -1,4 +1,5 @@
 "use client";
+import "/src/app/globals.css";
 
 import { useState } from "react";
 import {
@@ -20,8 +21,8 @@ const product = {
   imageAlt:
     "Literally one charger on a white background with a USB-C connector.",
   breadcrumbs: [
-    { id: 1, name: "Shop", href: "#" },
-    { id: 2, name: "Charger", href: "#" },
+    { id: 1, name: "Shop", href: "/shop" },
+    { id: 2, name: "Charger", href: "/charger" },
   ],
   amounts: [
     {
@@ -46,13 +47,16 @@ export default function ProductView() {
         {/* Product details */}
         <div className="lg:max-w-lg lg:self-end">
           <nav aria-label="Breadcrumb">
-            <ol role="list" className="flex items-center space-x-2">
+            <ol
+              role="list"
+              className="flex items-center space-x-2 ralewayRegular"
+            >
               {product.breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
                 <li key={breadcrumb.id}>
                   <div className="flex items-center text-sm">
                     <a
                       href={breadcrumb.href}
-                      className="font-medium text-gray-500 hover:text-gray-900"
+                      className="font-medium blueText hover:text-gray-900"
                     >
                       {breadcrumb.name}
                     </a>
@@ -73,7 +77,7 @@ export default function ProductView() {
           </nav>
 
           <div className="mt-4">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mohaveHeader">
               {product.name}
             </h1>
           </div>
@@ -84,7 +88,7 @@ export default function ProductView() {
             </h2>
 
             <div className="flex items-center">
-              <p className="text-lg text-gray-900 sm:text-xl">
+              <p className="text-lg sm:text-xl ralewayRegular">
                 {product.price}
               </p>
 
@@ -108,25 +112,23 @@ export default function ProductView() {
                     </div>
                     <p className="sr-only">{reviews.average} out of 5 stars</p>
                   </div>
-                  <p className="ml-2 text-sm text-gray-500">
-                    {reviews.totalCount} reviews
+                  <p className="ml-2 text-sm ralewayRegular">
+                    {reviews.totalCount} review (by me)...
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="mt-4 space-y-6">
-              <p className="text-base text-gray-500">{product.description}</p>
+              <p className="text-base ralewayRegular">{product.description}</p>
             </div>
 
-            <div className="mt-6 flex items-center">
+            <div className="mt-6 flex items-center ralewayRegular">
               <CheckIcon
                 aria-hidden="true"
-                className="h-5 w-5 flex-shrink-0 text-green-500"
+                className="h-5 w-5 flex-shrink-0 blueText"
               />
-              <p className="ml-2 text-sm text-gray-500">
-                In stock and ready to ship
-              </p>
+              <p className="ml-2 text-sm">In stock and ready to ship</p>
             </div>
           </section>
         </div>
@@ -153,9 +155,7 @@ export default function ProductView() {
               <div className="sm:flex sm:justify-between">
                 {/* Amount selector */}
                 <fieldset>
-                  <legend className="block text-sm font-medium text-gray-700">
-                    Amount
-                  </legend>
+                  <legend className="block text-sm ralewayBold">Amount</legend>
                   <RadioGroup
                     value={selectedAmount}
                     onChange={setSelectedAmount}
@@ -168,17 +168,15 @@ export default function ProductView() {
                         value={amount}
                         aria-label={amount.name}
                         aria-describedby={amount.description}
-                        className="group relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none data-[focus]:ring-2 data-[focus]:ring-indigo-500"
+                        className="group relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none data-[focus]:ring-2 data-[focus]:ring-teal-300"
                       >
-                        <p className="text-base font-medium text-gray-900">
-                          {amount.name}
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="text-base ralewayBold">{amount.name}</p>
+                        <p className="mt-1 text-sm ralewayRegular">
                           {amount.description}
                         </p>
                         <div
                           aria-hidden="true"
-                          className="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent group-data-[focus]:border group-data-[checked]:border-indigo-500"
+                          className="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent group-data-[focus]:border group-data-[checked]:border-teal-300"
                         />
                       </Radio>
                     ))}

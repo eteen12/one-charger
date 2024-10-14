@@ -10,17 +10,17 @@ export default function Promos() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 md:grid md:grid-cols-2 md:px-8">
             <div className="mx-auto max-w-2xl py-24 md:max-w-none md:py-64">
               <div className="md:pr-16">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl mohaveHeader">
                   Well, want a charger?
                 </h1>
-                <p className="mt-4 text-xl text-gray-600">
-                  You proabably dont need a charger, but if you do, I'll send
-                  you one.
+                <p className="mt-4 text-xl ralewayRegular">
+                  You probably dont need a charger, but if you do, I'll send you
+                  one.
                 </p>
                 <div className="mt-6">
                   <a
                     href="#"
-                    className="inline-block rounded-md border border-transparent darkBg px-8 py-3 font-medium text-white hover:bg-stone-900"
+                    className="inline-block rounded-md border border-transparent darkBg px-8 py-3 font-medium text-white hover:bg-stone-900 ralewayBold"
                   >
                     buy a charger now
                   </a>

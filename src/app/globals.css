@@ -14,9 +14,21 @@ html{
   font-family: var(--font-mohave);
   font-weight: var(--font-weight);
 }
+.mohaveHeader{
+  font-family: var(--font-mohave);
+  font-weight: 700;
+}
 .raleway {
   font-family: var(--font-raleway);
   font-weight: var(--font-weight);
+}
+.ralewayRegular {
+  font-family: var(--font-raleway);
+  font-weight: 400;
+}
+.ralewayBold {
+  font-family: var(--font-raleway);
+  font-weight: 500;
 }
 .lightGrayBg {
   background-color: #d9d9d9;
@@ -33,6 +45,9 @@ html{
 }
 .darkText {
   color: #2b2b2b;
+}
+.text-shadow {
+  text-shadow: 5px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 body {

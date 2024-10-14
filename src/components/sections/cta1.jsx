@@ -2,10 +2,7 @@ export default function Cta1() {
   return (
     <div className="blueBg">
       <div className="mx-auto max-w-7xl px-6 py-12 sm:py-20 md:py-24 lg:px-8">
-        <h2
-          className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mohave"
-          style={{ "--font-weight": "700" }}
-        >
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mohaveHeader">
           change your life forever.
         </h2>
         <div className="mt-10 flex items-center gap-x-6">
