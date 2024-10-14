@@ -50,13 +50,13 @@ export default function ProductFeatures() {
               src={ChargerDisplay}
               width={2432}
               height={1442}
-              className="mb-[-11%]"
+              className="mb-[-15%]"
             />
           </div>
         </div>
       </div>
-      <div className="bg-white min-w-[100vw] mt-16 max-w-2xl sm:mt-20 lg:mt-24">
-        <div aria-hidden="true" className="relative">
+      <div className="bg-white min-w-[100vw]  max-w-2xl sm:mt-20 lg:mt-24">
+      <div aria-hidden="true" className="relative">
           <div className="absolute -inset-x-2 bottom-0 bg-gradient-to-t from-white via-white/70 to-transparent pt-[25%]" />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import ChargerByWaterfall from "/public/promo/chargerByWaterfall.png";
+import LinedUpCables from "/public/promo/linedUpCables.png";
 
 const testimonials = [
   {
@@ -28,14 +28,14 @@ export default function Promo() {
     <div className="relative overflow-hidden bg-white">
       {/* Decorative background image and gradient */}
       <div aria-hidden="true" className="absolute inset-0">
-        <div className="absolute inset-0 mx-auto max-w-7xl overflow-hidden xl:px-8">
+        <div className="absolute inset-0 mx-auto w-full overflow-hidden">
           <Image
             alt="hiii"
-            src={ChargerByWaterfall}
+            src={LinedUpCables}
             className="h-full w-full object-cover "
           />
         </div>
-        <div className="absolute inset-0 bg-white bg-opacity-75" />
+        <div className="absolute inset-0 bg-white bg-opacity-5" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white" />
       </div>
 

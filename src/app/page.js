@@ -6,6 +6,7 @@ import ProductFeatures from "../components/sections/productFeatures";
 import Promo from "../components/sections/promo";
 import Content from "../components/sections/content";
 
+
 export default function Home() {
   return (
     <div className="z-40">
@@ -13,6 +14,7 @@ export default function Home() {
       <Cta1 />
       <ProductFeatures />
       <Content />
+  
       <Promo />
     </div>
   );
