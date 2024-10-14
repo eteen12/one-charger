@@ -1,35 +1,44 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { CheckIcon, QuestionMarkCircleIcon, StarIcon } from '@heroicons/react/20/solid'
-import { Radio, RadioGroup } from '@headlessui/react'
-import { ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { useState } from "react";
+import {
+  CheckIcon,
+  QuestionMarkCircleIcon,
+  StarIcon,
+} from "@heroicons/react/20/solid";
+import { Radio, RadioGroup } from "@headlessui/react";
+import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 
 const product = {
-  name: 'Everyday Ruck Snack',
-  href: '#',
-  price: '$220',
+  name: "Literally one Charger",
+  href: "#",
+  price: "$7",
   description:
-    "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
-  imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-04-featured-product-shot.jpg',
-  imageAlt: 'Model wearing light green backpack with black canvas straps and front zipper pouch.',
+    "Want a single charger that can charge any device? This is the one for you. It's small, light, and can charge anything. That is type C of course. IF you need a lighting cable, well, maybe ill make a website soon.",
+  imageSrc:
+    "https://tailwindui.com/plus/img/ecommerce-images/product-page-04-featured-product-shot.jpg",
+  imageAlt:
+    "Literally one charger on a white background with a USB-C connector.",
   breadcrumbs: [
-    { id: 1, name: 'Travel', href: '#' },
-    { id: 2, name: 'Bags', href: '#' },
+    { id: 1, name: "Shop", href: "#" },
+    { id: 2, name: "Charger", href: "#" },
   ],
-  sizes: [
-    { name: '18L', description: 'Perfect for a reasonable amount of snacks.' },
-    { name: '20L', description: 'Enough room for a serious amount of snacks.' },
+  amounts: [
+    {
+      name: "A Charger",
+      description: "Literally one charger.",
+    },
+    { name: "2 Chargers", description: "Is there really anything to say?" },
   ],
-}
-const reviews = { average: 4, totalCount: 1624 }
+};
+const reviews = { average: 5, totalCount: 1 };
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function ProductView() {
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0])
+  const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);
 
   return (
     <div className="bg-white">
@@ -41,7 +50,10 @@ export default function ProductView() {
               {product.breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
                 <li key={breadcrumb.id}>
                   <div className="flex items-center text-sm">
-                    <a href={breadcrumb.href} className="font-medium text-gray-500 hover:text-gray-900">
+                    <a
+                      href={breadcrumb.href}
+                      className="font-medium text-gray-500 hover:text-gray-900"
+                    >
                       {breadcrumb.name}
                     </a>
                     {breadcrumbIdx !== product.breadcrumbs.length - 1 ? (
@@ -61,7 +73,9 @@ export default function ProductView() {
           </nav>
 
           <div className="mt-4">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{product.name}</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              {product.name}
+            </h1>
           </div>
 
           <section aria-labelledby="information-heading" className="mt-4">
@@ -70,7 +84,9 @@ export default function ProductView() {
             </h2>
 
             <div className="flex items-center">
-              <p className="text-lg text-gray-900 sm:text-xl">{product.price}</p>
+              <p className="text-lg text-gray-900 sm:text-xl">
+                {product.price}
+              </p>
 
               <div className="ml-4 border-l border-gray-300 pl-4">
                 <h2 className="sr-only">Reviews</h2>
@@ -82,15 +98,19 @@ export default function ProductView() {
                           key={rating}
                           aria-hidden="true"
                           className={classNames(
-                            reviews.average > rating ? 'text-yellow-400' : 'text-gray-300',
-                            'h-5 w-5 flex-shrink-0',
+                            reviews.average > rating
+                              ? "text-yellow-400"
+                              : "text-gray-300",
+                            "h-5 w-5 flex-shrink-0"
                           )}
                         />
                       ))}
                     </div>
                     <p className="sr-only">{reviews.average} out of 5 stars</p>
                   </div>
-                  <p className="ml-2 text-sm text-gray-500">{reviews.totalCount} reviews</p>
+                  <p className="ml-2 text-sm text-gray-500">
+                    {reviews.totalCount} reviews
+                  </p>
                 </div>
               </div>
             </div>
@@ -100,8 +120,13 @@ export default function ProductView() {
             </div>
 
             <div className="mt-6 flex items-center">
-              <CheckIcon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-green-500" />
-              <p className="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
+              <CheckIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-shrink-0 text-green-500"
+              />
+              <p className="ml-2 text-sm text-gray-500">
+                In stock and ready to ship
+              </p>
             </div>
           </section>
         </div>
@@ -109,7 +134,11 @@ export default function ProductView() {
         {/* Product image */}
         <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
-            <img alt={product.imageAlt} src={product.imageSrc} className="h-full w-full object-cover object-center" />
+            <img
+              alt={product.imageAlt}
+              src={product.imageSrc}
+              className="h-full w-full object-cover object-center"
+            />
           </div>
         </div>
 
@@ -122,25 +151,31 @@ export default function ProductView() {
 
             <form>
               <div className="sm:flex sm:justify-between">
-                {/* Size selector */}
+                {/* Amount selector */}
                 <fieldset>
-                  <legend className="block text-sm font-medium text-gray-700">Size</legend>
+                  <legend className="block text-sm font-medium text-gray-700">
+                    Amount
+                  </legend>
                   <RadioGroup
-                    value={selectedSize}
-                    onChange={setSelectedSize}
+                    value={selectedAmount}
+                    onChange={setSelectedAmount}
                     className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2"
                   >
-                    {product.sizes.map((size) => (
+                    {product.amounts.map((amount) => (
                       <Radio
-                        key={size.name}
+                        key={amount.name}
                         as="div"
-                        value={size}
-                        aria-label={size.name}
-                        aria-description={size.description}
+                        value={amount}
+                        aria-label={amount.name}
+                        aria-describedby={amount.description}
                         className="group relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none data-[focus]:ring-2 data-[focus]:ring-indigo-500"
                       >
-                        <p className="text-base font-medium text-gray-900">{size.name}</p>
-                        <p className="mt-1 text-sm text-gray-500">{size.description}</p>
+                        <p className="text-base font-medium text-gray-900">
+                          {amount.name}
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {amount.description}
+                        </p>
                         <div
                           aria-hidden="true"
                           className="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent group-data-[focus]:border group-data-[checked]:border-indigo-500"
@@ -151,8 +186,11 @@ export default function ProductView() {
                 </fieldset>
               </div>
               <div className="mt-4">
-                <a href="#" className="group inline-flex text-sm text-gray-500 hover:text-gray-700">
-                  <span>What size should I buy?</span>
+                <a
+                  href="#"
+                  className="group inline-flex text-sm text-gray-500 hover:text-gray-700"
+                >
+                  <span>Will I actually get a charger?</span>
                   <QuestionMarkCircleIcon
                     aria-hidden="true"
                     className="ml-2 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -162,9 +200,9 @@ export default function ProductView() {
               <div className="mt-10">
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium text-white"
                 >
-                  Add to bag
+                  Add to cart
                 </button>
               </div>
               <div className="mt-6 text-center">
@@ -173,7 +211,9 @@ export default function ProductView() {
                     aria-hidden="true"
                     className="mr-2 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                   />
-                  <span className="text-gray-500 hover:text-gray-700">Lifetime Guarantee</span>
+                  <span className="text-gray-500 hover:text-gray-700">
+                    Developer Guarentee
+                  </span>
                 </a>
               </div>
             </form>
@@ -181,5 +221,5 @@ export default function ProductView() {
         </div>
       </div>
     </div>
-  )
+  );
 }
