@@ -6,7 +6,7 @@ export default function Promos() {
           aria-hidden="true"
           className="absolute hidden h-full w-1/2 blueBg md:block"
         />
-        <div className="relative bg-gray-100 md:bg-transparent">
+        <div className="relative blueBg md:bg-transparent">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 md:grid md:grid-cols-2 md:px-8">
             <div className="mx-auto max-w-2xl py-24 md:max-w-none md:py-64">
               <div className="md:pr-16">
