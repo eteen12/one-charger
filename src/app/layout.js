@@ -1,6 +1,7 @@
 import { Mohave,Raleway } from "next/font/google";
 import "./globals.css";
 import NavBarClient from "../components/client/navBarClient";
+import Footer from "../components/sections/footer.jsx";
 
 const mohave = Mohave({
   subsets: ["latin"],
@@ -112,6 +113,7 @@ export default function RootLayout({ children }) {
       <body className={`${mohave.variable} antialiased`}>
         <NavBarClient />
         {children}
+        <Footer />
       </body>
     </html>
   );
