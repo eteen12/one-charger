@@ -1,27 +1,38 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import { MdDevicesOther, MdElectricBolt, MdExpand } from "react-icons/md";
 
 const features = [
   {
-    name: "Push to deploy.",
+    name: "Compatibility.",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: CloudArrowUpIcon,
+      "This single charger, is compatible with all devices. It is the only charger you will ever need. Ok it only charges type C but still.",
+    icon: (
+      <MdDevicesOther
+        aria-hidden="true"
+        className="absolute h-5 w-5 darkText"
+      />
+    ),
   },
   {
-    name: "SSL certificates.",
+    name: "Charger length.",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
+      "Coming in at a whopping 1 meter (or 3.3 feet) this charger is the perfect length for all your charging needs. Well kinda, it only charges type C.",
+    icon: (
+      <MdExpand
+        aria-hidden="true"
+        className="absolute h-5 w-5 darkText"
+      />
+    ),
   },
   {
-    name: "Database backups.",
+    name: "Is it actually good?",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: ServerIcon,
+      "In all seriousness, this charger is actually pretty good. I mean I use it. Its a good charger. It charges your phone. Did I mention it only charges type C?",
+    icon: (
+      <MdElectricBolt
+        aria-hidden="true"
+        className="absolute h-5 w-5 darkText"
+      />
+    ),
   },
 ];
 
@@ -32,25 +43,24 @@ export default function ProductFeatures() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">
-                Deploy faster
+              <h2 className="text-base font-semibold leading-7 blueText">
+                features
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                A better workflow
+                Kelownas best charger.
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                I decided to create a solution to a non existant problem. So
+                here we are, selling nothing but literally one charger. The idea
+                born by Ethan Breitkreutz.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900">
-                      <feature.icon
-                        aria-hidden="true"
-                        className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                      />
+                      <div className="absolute -left-3 top-0 flex h-10 w-10 items-center justify-center rounded-lg blueBg mx-auto">
+                        {feature.icon}
+                      </div>
                       {feature.name}
                     </dt>{" "}
                     <dd className="inline">{feature.description}</dd>
