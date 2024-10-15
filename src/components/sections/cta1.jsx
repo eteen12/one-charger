@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Cta1() {
   return (
     <div className="blueBg">
@@ -6,15 +8,15 @@ export default function Cta1() {
           change your life forever.
         </h2>
         <div className="mt-10 flex items-center gap-x-6">
-          <a
-            href="#"
+          <Link
+            href="/shop"
             className="rounded-md darkBg px-5 py-2.5 text-sm font-semibold text-white shadow-sm raleway md:text-base"
             style={{ "--font-weight": "500" }}
           >
             buy now
-          </a>
+          </Link>
           <a
-            href="#"
+            href="/contact"
             className="text-sm font-semibold leading-6 raleway md:text-base"
             style={{ "--font-weight": "500" }}
           >

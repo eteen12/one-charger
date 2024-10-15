@@ -23,7 +23,7 @@ export default function Promos() {
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="#"
+                    href="/shop"
                     className="inline-block rounded-md border border-transparent darkBg px-8 py-3 font-medium text-white hover:bg-stone-900 ralewayBold"
                   >
                     get a charger now
