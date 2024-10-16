@@ -17,17 +17,16 @@ export default function ProductView() {
   const { cartItems, addToCart } = useContext(CartContext);
 
   const handleAddToCart = (e) => {
-    e.preventDefault(); // Prevent the default form submission
-    // Prepare the item to add
+    e.preventDefault(); 
     const itemToAdd = {
-      id: product.id, // Ensure your product object has an id
-      name: product.name, // Ensure your product object has a name
-      description: selectedAmount.description, // Example based on the selected amount
-      price: selectedAmount.price, // Ensure your amount has a price
-      quantity: 1, // Default quantity
+      id: product.id, 
+      name: product.name, 
+      description: selectedAmount.description, 
+      price: selectedAmount.price,
+      quantity: 1, 
     };
 
-    addToCart(itemToAdd); // Call addToCart with the prepared item
+    addToCart(itemToAdd); 
   };
   return (
     <div className="bg-gray-50">
@@ -42,8 +41,6 @@ export default function ProductView() {
             />
           </div>
         </div>
-
-        {/* Product form */}
         <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
           <section aria-labelledby="options-heading">
             <h2 id="options-heading" className="sr-only">

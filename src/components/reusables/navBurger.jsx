@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
+import ProductViewNavCart from "../client/productViewNavCart";
 
 export default function NavBurger() {
   const [opened, setOpened] = useState(false);
@@ -12,7 +13,6 @@ export default function NavBurger() {
     setOpened(!opened);
   };
 
-  // Define the menu items
   const menuItems = [
     { name: "Book online", href: "/" },
     { name: "Services", href: "/" },
@@ -34,12 +34,13 @@ export default function NavBurger() {
         <div className="tham-box">
           <div className="tham-inner darkColor" />
         </div>
+        
       </div>
-
+     
       {/* Mobile Menu */}
       <div
         className={classNames(
-          "fixed top-16 left-0 w-full h-screen lightGrayBg transition-opacity duration-500 ease-in-out flex flex-col",
+          "fixed top-16 left-0 w-full h-screen bg-gray-50 transition-opacity duration-500 ease-in-out flex flex-col",
           {
             "opacity-100 pointer-events-auto": opened,
             "opacity-0 pointer-events-none": !opened,
@@ -64,7 +65,8 @@ export default function NavBurger() {
         <div className="flex justify-center mt-10">
           <button
             type="button"
-            className="rounded-md blueBg px-20 py-2.5 text-lg text-white shadow-md hover:bg-teal-500 mohave tracking-wide"style={{ "--font-weight": "500" }}
+            className="rounded-md blueBg px-20 py-2.5 text-lg text-white shadow-md hover:bg-teal-500 mohave tracking-wide"
+            style={{ "--font-weight": "500" }}
           >
             Button text
           </button>
