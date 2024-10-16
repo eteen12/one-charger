@@ -1,19 +1,25 @@
 "use client";
-import PropTypes from "prop-types";
 import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(() => {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
     const savedCartItems = localStorage.getItem("cartItems");
-    return savedCartItems ? JSON.parse(savedCartItems) : [];
-  });
+    if (savedCartItems) {
+      setCartItems(JSON.parse(savedCartItems));
+    }
+  }, []);
 
   const addToCart = (item) => {
-    console.log("Adding item:", item);
-    setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    console.log("Item added to cart:", item);
+    setCartItems((prevItems) => [...prevItems, { ...item, quantity: 1 }]);
+  };
+
+  const removeFromCart = (itemId) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
   useEffect(() => {
@@ -25,6 +31,7 @@ export const CartProvider = ({ children }) => {
       value={{
         cartItems,
         addToCart,
+        removeFromCart,
       }}
     >
       {children}
@@ -35,3 +42,5 @@ export const CartProvider = ({ children }) => {
 CartProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default CartContext;

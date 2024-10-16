@@ -22,8 +22,8 @@ export default function ProductView() {
       id: product.id, 
       name: product.name, 
       description: selectedAmount.description, 
-      price: selectedAmount.price,
-      quantity: 1, 
+      price: product.price,
+      quantity: selectedAmount.quantity, 
     };
 
     addToCart(itemToAdd); 
@@ -93,7 +93,7 @@ export default function ProductView() {
               <div className="mt-10">
                 <button
                   type="button"
-                  onClick={() => addToCart(product)}
+                  onClick={handleAddToCart} 
                   className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium text-white"
                 >
                   Add to cart
