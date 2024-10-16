@@ -3,7 +3,6 @@
 import { useNavHandler } from "../../hooks/useNavHandler";
 import NavBarServer from "../server/navBarServer";
 
-
 export default function NavBarClient() {
   const { scrollingDown, shadow, background } = useNavHandler();
 

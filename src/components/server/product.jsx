@@ -1,5 +1,6 @@
 import ProductImage from "/public/productView/productImage.png";;
 const product = {
+  id:1,
   name: "Literally one Charger",
   href: "#",
   price: "$7",

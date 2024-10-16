@@ -1,7 +1,8 @@
-import { Mohave,Raleway } from "next/font/google";
+import { Mohave, Raleway } from "next/font/google";
 import "./globals.css";
 import NavBarClient from "../components/client/navBarClient";
 import Footer from "../components/sections/footer.jsx";
+import { CartProvider } from "@/context/cart";
 
 const mohave = Mohave({
   subsets: ["latin"],
@@ -110,10 +111,12 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.schema) }}
         />
       </head>
-      <body className={`${mohave.variable} antialiased`}>
-        <NavBarClient />
-        {children}
-        <Footer />
+      <body className={`${mohave.variable} ${raleway.variable} antialiased`}>
+        <CartProvider>
+          <NavBarClient />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

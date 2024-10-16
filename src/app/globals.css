@@ -24,7 +24,7 @@ html{
 }
 .ralewayRegular {
   font-family: var(--font-raleway);
-  font-weight: 400;
+  font-weight: 500;
 }
 .ralewayBold {
   font-family: var(--font-raleway);

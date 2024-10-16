@@ -3,18 +3,32 @@ import "/src/app/globals.css";
 
 import Image from "next/image";
 
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 
 import ProductViewServer from "/src/components/server/productViewServer.jsx";
-
+import { CartContext } from "/src/context/cart";
 import product from "../server/product";
 
 export default function ProductView() {
   const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);
+  const { cartItems, addToCart } = useContext(CartContext);
 
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Prevent the default form submission
+    // Prepare the item to add
+    const itemToAdd = {
+      id: product.id, // Ensure your product object has an id
+      name: product.name, // Ensure your product object has a name
+      description: selectedAmount.description, // Example based on the selected amount
+      price: selectedAmount.price, // Ensure your amount has a price
+      quantity: 1, // Default quantity
+    };
+
+    addToCart(itemToAdd); // Call addToCart with the prepared item
+  };
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -81,7 +95,8 @@ export default function ProductView() {
               </div>
               <div className="mt-10">
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={() => addToCart(product)}
                   className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium text-white"
                 >
                   Add to cart
