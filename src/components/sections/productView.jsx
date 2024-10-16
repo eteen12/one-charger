@@ -2,35 +2,15 @@
 import "/src/app/globals.css";
 
 import Image from "next/image";
-import ProductImage from "/public/productView/productImage.png";
 
 import { useState } from "react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 
-const product = {
-  name: "Literally one Charger",
-  href: "#",
-  price: "$7",
-  description:
-    "Want a single charger that can charge any device? This is the one for you. It's small, light, and can charge anything. That is type C of course. IF you need a lighting cable, well, maybe ill make a website soon.",
-  imageSrc: ProductImage,
-  imageAlt:
-    "Literally one charger on a white background with a USB-C connector.",
-  breadcrumbs: [
-    { id: 1, name: "Shop", href: "/shop" },
-    { id: 2, name: "Charger", href: "/charger" },
-  ],
-  amounts: [
-    {
-      name: "A Charger",
-      description: "Literally one charger.",
-    },
-    { name: "2 Chargers", description: "Is there really anything to say?" },
-  ],
-};
+import ProductViewServer from "/src/components/server/productViewServer.jsx";
 
+import product from "../server/product";
 
 export default function ProductView() {
   const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);
@@ -38,9 +18,7 @@ export default function ProductView() {
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-        {/* Product details */}
-
-        {/* Product image */}
+        <ProductViewServer />
         <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
             <Image
@@ -60,7 +38,6 @@ export default function ProductView() {
 
             <form>
               <div className="sm:flex sm:justify-between">
-                {/* Amount selector */}
                 <fieldset>
                   <legend className="block text-sm ralewayBold">Amount</legend>
                   <RadioGroup
