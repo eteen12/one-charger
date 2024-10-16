@@ -1,4 +1,4 @@
-import ProductImage from "/public/productView/productImage.png";
+import ProductImage from "/public/productView/productImage.png";;
 const product = {
   name: "Literally one Charger",
   href: "#",
