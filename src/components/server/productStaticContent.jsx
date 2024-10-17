@@ -10,13 +10,13 @@ export default function ProductStaticContent() {
   return (
     <div className="lg:max-w-lg lg:self-end">
       <nav aria-label="Breadcrumb">
-        <ol role="list" className="flex items-center space-x-2 ralewayRegular">
+        <ol role="list" className="flex items-center space-x-2">
           {product.breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
             <li key={breadcrumb.id}>
               <div className="flex items-center text-sm">
                 <a
                   href={breadcrumb.href}
-                  className="font-medium blueText hover:text-gray-900"
+                  className="font-medium blueText ralewayBold md:text-base"
                 >
                   {breadcrumb.name}
                 </a>
@@ -37,7 +37,7 @@ export default function ProductStaticContent() {
       </nav>
 
       <div className="mt-4">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mohaveHeader">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mohaveHeader">
           {product.name}
         </h1>
       </div>
@@ -72,7 +72,7 @@ export default function ProductStaticContent() {
                 </div>
                 <p className="sr-only">{reviews.average} out of 5 stars</p>
               </div>
-              <p className="ml-2 text-sm ralewayRegular">
+              <p className="ml-2 text-sm ralewayRegular sm:text-base">
                 {reviews.totalCount} review (by me)...
               </p>
             </div>
@@ -80,7 +80,7 @@ export default function ProductStaticContent() {
         </div>
 
         <div className="mt-4 space-y-6">
-          <p className="text-base ralewayRegular">{product.description}</p>
+          <p className="md:text-lg ralewayRegular">{product.description}</p>
         </div>
 
         <div className="mt-6 flex items-center ralewayRegular">
@@ -88,7 +88,7 @@ export default function ProductStaticContent() {
             aria-hidden="true"
             className="h-5 w-5 flex-shrink-0 blueText"
           />
-          <p className="ml-2 text-sm">In stock and ready to ship</p>
+          <p className="ml-2 text-sm sm:text-base">In stock and ready to ship</p>
         </div>
       </section>
     </div>

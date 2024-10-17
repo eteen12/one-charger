@@ -41,34 +41,32 @@ export default function ProductFeatures() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2
-                className="text-base font-semibold leading-7 blueText raleway md:text-lg"
-                style={{ "--font-weight": "500" }}
-              >
+              <h2 className="text-base font-semibold leading-7 blueText ralewayBold md:text-lg">
                 features
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight darkText sm:text-4xl md:text-5xl mohaveHeader">
                 Kelownas best charger.
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600 ralewayRegular md:text-xl">
+              <p className="mt-6 text-lg leading-8  ralewayRegular ">
                 I decided to create a solution to a non existant problem. So
                 here we are, selling nothing but literally one charger. The idea
                 born by Ethan Breitkreutz.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none ralewayRegular md:text-lg pl-3">
+              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 lg:max-w-none md:text-lg pl-3">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold darkText">
+                    <dt className="inline font-semibold darkText ralewayBold">
                       <div className="absolute -left-3 top-0 flex h-10 w-10 items-center justify-center rounded-lg blueBg mx-auto">
                         {feature.icon}
                       </div>
                       {feature.name}
                     </dt>{" "}
-                    <dd className="inline">{feature.description}</dd>
+                    <dd className="inline ralewayRegular">
+                      {feature.description}
+                    </dd>
                   </div>
                 ))}
               </dl>
-              
             </div>
           </div>
           <Image

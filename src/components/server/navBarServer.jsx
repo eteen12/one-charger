@@ -24,7 +24,7 @@ export default function NavBarServer() {
           <ProductViewNavCart />
         </Link>
       </div>
-      <div className="hidden sm:flex items-center px-2 darkColor ralewayBold">
+      <div className="hidden sm:flex items-center px-2 darkColor tracking-tighter ralewayBold">
         <ul className="flex items-center">
           <Link href="/shop">
             <li className="ml-10 hover:border-b text-xl  lg:text-2xl">Shop</li>

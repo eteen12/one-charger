@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
-import ProductViewNavCart from "../client/productViewNavCart";
 
 export default function NavBurger() {
   const [opened, setOpened] = useState(false);
@@ -12,12 +11,14 @@ export default function NavBurger() {
   const handleToggle = () => {
     setOpened(!opened);
   };
+  const handleClose = () => {
+    setOpened(false);
+  };
 
   const menuItems = [
-    { name: "Book online", href: "/" },
-    { name: "Services", href: "/" },
-    { name: "Projects", href: "/" },
-    { name: "Faq", href: "/" },
+    { name: "Shop", href: "/shop" },
+    { name: "Contact", href: "/contact" },
+    { name: "Faq", href: "/#faq" },
   ];
 
   return (
@@ -34,9 +35,8 @@ export default function NavBurger() {
         <div className="tham-box">
           <div className="tham-inner darkColor" />
         </div>
-        
       </div>
-     
+
       {/* Mobile Menu */}
       <div
         className={classNames(
@@ -48,29 +48,32 @@ export default function NavBurger() {
         )}
       >
         <ul
-          className="flex flex-col items-start py-10 gap-8 text-2xl raleway darkColor"
+          className="flex flex-col items-start py-10 gap-8 text-2xl ralewayBold darkColor"
           style={{ "--font-weight": "500" }}
         >
           {menuItems.map((item, index) => (
             <li key={index} className="py-2 w-full">
               <div className="flex justify-between items-center">
-                <Link href={item.href} className="ml-6">
+                <Link href={item.href} className="ml-6" onClick={handleClose}>
                   {item.name}
                 </Link>
-                <IoIosArrowForward className="mt-px mr-3 text-3xl" />
+                <IoIosArrowForward
+                  className="mt-px mr-3 text-3xl"
+                  onClick={handleClose}
+                />
               </div>
             </li>
           ))}
         </ul>
-        <div className="flex justify-center mt-10">
+        {/* <div className="flex justify-center mt-10">
           <button
             type="button"
-            className="rounded-md blueBg px-20 py-2.5 text-lg text-white shadow-md hover:bg-teal-500 mohave tracking-wide"
+            className="rounded-md blueBg px-20 py-2.5 text-lg shadow-md ralewayBold tracking-tighter"
             style={{ "--font-weight": "500" }}
           >
-            Button text
+            Wanna cal
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );

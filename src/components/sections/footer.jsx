@@ -11,7 +11,6 @@ const navigation = {
   ],
   support: [{ name: "Contact", href: "/contact" }],
   company: [
-    { name: "About", href: "/about" },
     { name: "Teleta Development", href: "https://TeletaDevelopment.com" },
   ],
   legal: [

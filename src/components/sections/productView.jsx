@@ -2,6 +2,7 @@
 import "/src/app/globals.css";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { useContext, useState } from "react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
@@ -50,7 +51,9 @@ export default function ProductView() {
             <form>
               <div className="sm:flex sm:justify-between">
                 <fieldset>
-                  <legend className="block text-sm ralewayBold">Amount</legend>
+                  <legend className="block text-sm ralewayBold md:text-base">
+                    Amount
+                  </legend>
                   <RadioGroup
                     value={selectedAmount}
                     onChange={setSelectedAmount}
@@ -66,7 +69,7 @@ export default function ProductView() {
                         className="group relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none data-[focus]:ring-2 data-[focus]:ring-teal-300"
                       >
                         <p className="text-base ralewayBold">{amount.name}</p>
-                        <p className="mt-1 text-sm ralewayRegular">
+                        <p className="mt-1 text-sm ralewayRegular ">
                           {amount.description}
                         </p>
                         <div
@@ -79,28 +82,28 @@ export default function ProductView() {
                 </fieldset>
               </div>
               <div className="mt-4">
-                <a
-                  href="#"
-                  className="group inline-flex text-sm text-gray-500 hover:text-gray-700"
+                <Link
+                  href="/#faq"
+                  className="group inline-flex text-sm md:text-base hover:text-gray-700"
                 >
                   <span>Will I actually get a charger?</span>
                   <QuestionMarkCircleIcon
                     aria-hidden="true"
                     className="ml-2 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                   />
-                </a>
+                </Link>
               </div>
               <div className="mt-10">
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium darktext"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base darktext ralewayBold"
                 >
                   Add to cart
                 </button>
               </div>
               <div className="mt-6 text-center">
-                <a href="#" className="group inline-flex text-base font-medium">
+                <div className="group inline-flex text-base font-medium">
                   <ShieldCheckIcon
                     aria-hidden="true"
                     className="mr-2 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -108,7 +111,7 @@ export default function ProductView() {
                   <span className="text-gray-500 hover:text-gray-700">
                     Developer Guarentee
                   </span>
-                </a>
+                </div>
               </div>
             </form>
           </section>

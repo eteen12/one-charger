@@ -11,7 +11,6 @@ const product = {
     "Literally one charger on a white background with a USB-C connector.",
   breadcrumbs: [
     { id: 1, name: "Shop", href: "/shop" },
-    { id: 2, name: "Charger", href: "/charger" },
   ],
   amounts: [
     {

@@ -1,4 +1,4 @@
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { FaPhone, FaEnvelope } from "react-icons/fa6";
 
 export default function Page() {
   return (
@@ -35,26 +35,23 @@ export default function Page() {
                 />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+            <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl mohaveHeader">
               So... Wanna talk?
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-gray-600 ralewayRegular">
               Feel free to contact me with any questions or feedback you might
               have. Let me know what you think of the site!
             </p>
-            <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
+            <dl className="mt-10 space-y-4 text-base leading-7 ">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Telephone</span>
-                  <PhoneIcon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
+                  <FaPhone aria-hidden="true" className="h-7 w-6 " />
                 </dt>
                 <dd>
                   <a
                     href="tel:+1 (555) 234-5678"
-                    className="hover:text-gray-900"
+                    className="hover:text-gray-900 ralewayRegular"
                   >
                     &#55;&#55;&#56;&#45;&#53;&#56;&#49;&#45;&#57;&#49;&#53;&#49;
                   </a>
@@ -63,15 +60,12 @@ export default function Page() {
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Email</span>
-                  <EnvelopeIcon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
+                  <FaEnvelope aria-hidden="true" className="h-7 w-6 " />
                 </dt>
                 <dd>
                   <a
                     href="mailto:hello@example.com"
-                    className="hover:text-gray-900"
+                    className="hover:text-gray-900 ralewayRegular"
                   >
                     &#101;&#116;&#104;&#97;&#110;&#64;&#108;&#105;&#116;&#101;&#114;&#97;&#108;&#108;&#121;&#111;&#110;&#101;&#99;&#104;&#97;&#114;&#103;&#101;&#114;&#46;&#99;&#97;
                   </a>
@@ -85,7 +79,7 @@ export default function Page() {
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
         >
-          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+          <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg ralewayBold">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label
@@ -97,10 +91,11 @@ export default function Page() {
                 <div className="mt-2.5">
                   <input
                     id="first-name"
+                    placeholder="John"
                     name="first-name"
                     type="text"
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-2 ring-inset ring-stone-800 placeholder:text-gray-400 focus:outline-none focus:ring-teal-300 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -116,8 +111,9 @@ export default function Page() {
                     id="last-name"
                     name="last-name"
                     type="text"
+                    placeholder="Doe"
                     autoComplete="family-name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-2 ring-inset ring-stone-800 placeholder:text-gray-400 focus:outline-none focus:ring-teal-300 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -133,8 +129,9 @@ export default function Page() {
                     id="email"
                     name="email"
                     type="email"
+                    placeholder="hotdog53@gmail.com....."
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-2 ring-inset ring-stone-800 placeholder:text-gray-400 focus:outline-none focus:ring-teal-300 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -151,7 +148,8 @@ export default function Page() {
                     name="phone-number"
                     type="tel"
                     autoComplete="tel"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    placeholder="911......"
+                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-2 ring-inset ring-stone-800 placeholder:text-gray-400 focus:outline-none focus:ring-teal-300 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -167,8 +165,8 @@ export default function Page() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    defaultValue={""}
+                    className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-2 ring-inset ring-stone-800 placeholder:text-gray-400 focus:outline-none focus:ring-teal-300 sm:text-sm sm:leading-6"
+                    placeholder="Hey ethan, your website is terrible!........lorem ipsum dolor sit amet and whatnot......"
                   />
                 </div>
               </div>
@@ -176,7 +174,7 @@ export default function Page() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md blueBg px-3.5 py-2.5 text-center text-sm md:text-base ralewayBold tracking-tighter"
               >
                 Send message
               </button>
