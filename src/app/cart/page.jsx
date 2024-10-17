@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import {CartContext} from "@/context/cart";
+"use client";
+import React, { useContext } from "react";
+import { CartContext } from "@/context/cart";
 import Image from "next/image";
 import ProductImage from "/public/productView/productImage.png";
 import {
@@ -26,11 +27,11 @@ export default function Page() {
               role="list"
               className="divide-y divide-gray-200 border-b border-t border-gray-200"
             >
-              {product.amounts.map((amount, idx) => (
+              {cartItems.map((item, idx) => (
                 <li key={idx} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
                     <Image
-                      alt={product.imageAlt}
+                      alt={item.imageAlt}
                       src={ProductImage}
                       className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
                     />
@@ -42,30 +43,30 @@ export default function Page() {
                         <div className="flex justify-between">
                           <h3 className="text-sm">
                             <a
-                              href={product.href}
+                              href={item.href}
                               className="font-medium text-gray-700 hover:text-gray-800"
                             >
-                              {amount.name}
+                              {item.name}
                             </a>
                           </h3>
                         </div>
                         <div className="mt-1 text-sm">
-                          <p className="text-gray-500">{amount.description}</p>
+                          <p className="text-gray-500">{item.description}</p>
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">
-                          ${product.price * amount.quantity}
+                          ${item.price * item.quantity}
                         </p>
                       </div>
 
                       <div className="mt-4 sm:mt-0 sm:pr-9">
                         <label htmlFor={`quantity-${idx}`} className="sr-only">
-                          Quantity, {amount.name}
+                          Quantity, {item.name}
                         </label>
                         <select
                           id={`quantity-${idx}`}
                           name={`quantity-${idx}`}
                           className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
-                          defaultValue={amount.quantity}
+                          defaultValue={item.quantity}
                         >
                           <option value={1}>1</option>
                           <option value={2}>2</option>
@@ -80,7 +81,7 @@ export default function Page() {
                         <div className="absolute right-0 top-0">
                           <button
                             type="button"
-                            onClick={() => removeFromCart(product.id)}
+                            onClick={() => removeFromCart(item.id)}
                             className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500"
                           >
                             <span className="sr-only">Remove</span>
@@ -120,8 +121,8 @@ export default function Page() {
                 <dt className="text-sm text-gray-600">Subtotal</dt>
                 <dd className="text-sm font-medium text-gray-900">
                   $
-                  {product.amounts.reduce(
-                    (total, amount) => total + amount.quantity * product.price,
+                  {cartItems.reduce(
+                    (total, item) => total + item.quantity * item.price,
                     0
                   )}
                 </dd>
@@ -169,9 +170,8 @@ export default function Page() {
                 <dd className="text-base font-medium text-gray-900">
                   $
                   {(
-                    product.amounts.reduce(
-                      (total, amount) =>
-                        total + amount.quantity * product.price,
+                    cartItems.reduce(
+                      (total, item) => total + item.quantity * item.price,
                       0
                     ) +
                     5 +

@@ -2,9 +2,9 @@
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-export const CartContext = createContext();
+const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ CartProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default CartContext;
+export { CartContext, CartProvider };

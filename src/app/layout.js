@@ -112,7 +112,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${mohave.variable} ${raleway.variable} antialiased`}>
-        <CartProvider>
+        <CartProvider >
           <NavBarClient />
           {children}
           <Footer />
