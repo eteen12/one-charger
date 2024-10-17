@@ -3,7 +3,7 @@ import "/src/app/globals.css";
 
 import Image from "next/image";
 
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
@@ -14,19 +14,19 @@ import product from "../server/product";
 
 export default function ProductView() {
   const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);
-  const { cartItems, addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     const itemToAdd = {
-      id: product.id, 
-      name: product.name, 
-      description: selectedAmount.description, 
+      id: product.id,
+      name: product.name,
+      description: selectedAmount.description,
       price: product.price,
-      quantity: selectedAmount.quantity, 
+      quantity: selectedAmount.quantity,
     };
 
-    addToCart(itemToAdd); 
+    addToCart(itemToAdd, selectedAmount);
   };
   return (
     <div className="bg-gray-50">
@@ -93,7 +93,7 @@ export default function ProductView() {
               <div className="mt-10">
                 <button
                   type="button"
-                  onClick={handleAddToCart} 
+                  onClick={handleAddToCart}
                   className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium text-white"
                 >
                   Add to cart

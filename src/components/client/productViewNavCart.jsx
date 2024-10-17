@@ -6,7 +6,7 @@ import { CartContext } from "@/context/cart";
 export default function ProductViewNavCart() {
   const context = useContext(CartContext);
   const { cartItems } = context;
-  const itemCount = cartItems.length;
+  const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   return (
     <>
       <div className="relative w-6 h-5">
