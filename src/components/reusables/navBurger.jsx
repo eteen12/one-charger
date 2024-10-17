@@ -19,6 +19,7 @@ export default function NavBurger() {
     { name: "Shop", href: "/shop" },
     { name: "Contact", href: "/contact" },
     { name: "Faq", href: "/#faq" },
+    { name: "Home", href: "/" },
   ];
 
   return (
@@ -57,23 +58,16 @@ export default function NavBurger() {
                 <Link href={item.href} className="ml-6" onClick={handleClose}>
                   {item.name}
                 </Link>
-                <IoIosArrowForward
-                  className="mt-px mr-3 text-3xl"
-                  onClick={handleClose}
-                />
+                <Link href={item.href}>
+                  <IoIosArrowForward
+                    className="mt-px mr-3 text-3xl"
+                    onClick={handleClose}
+                  />
+                </Link>
               </div>
             </li>
           ))}
         </ul>
-        {/* <div className="flex justify-center mt-10">
-          <button
-            type="button"
-            className="rounded-md blueBg px-20 py-2.5 text-lg shadow-md ralewayBold tracking-tighter"
-            style={{ "--font-weight": "500" }}
-          >
-            Wanna cal
-          </button>
-        </div> */}
       </div>
     </>
   );

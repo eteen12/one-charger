@@ -44,7 +44,7 @@ export default function ProductFeatures() {
               <h2 className="text-base font-semibold leading-7 blueText ralewayBold md:text-lg">
                 features
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight darkText sm:text-4xl md:text-5xl mohaveHeader">
+              <p className="mt-2 text-3xl font-bold tracking-tighter darkText sm:text-4xl md:text-5xl mohaveHeader">
                 Kelownas best charger.
               </p>
               <p className="mt-6 text-lg leading-8  ralewayRegular ">
