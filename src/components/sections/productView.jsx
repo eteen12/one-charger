@@ -8,7 +8,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 
-import ProductViewServer from "/src/components/server/productViewServer.jsx";
+import ProductStaticContent from "../server/productStaticContent";
 import { CartContext } from "/src/context/cart";
 import product from "../server/product";
 
@@ -31,7 +31,7 @@ export default function ProductView() {
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-        <ProductViewServer />
+        <ProductStaticContent />
         <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
             <Image

@@ -26,7 +26,7 @@ export default function NavBarServer() {
       </div>
       <div className="hidden sm:flex items-center px-2 darkColor ralewayBold">
         <ul className="flex items-center">
-          <Link href="/services">
+          <Link href="/shop">
             <li className="ml-10 hover:border-b text-xl  lg:text-2xl">Shop</li>
           </Link>
           <Link href="/contact">

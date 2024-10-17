@@ -6,7 +6,7 @@ const reviews = { average: 5, totalCount: 1 };
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-export default function ProductViewServer() {
+export default function ProductStaticContent() {
   return (
     <div className="lg:max-w-lg lg:self-end">
       <nav aria-label="Breadcrumb">

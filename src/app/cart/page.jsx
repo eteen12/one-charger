@@ -2,12 +2,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "@/context/cart";
 import Image from "next/image";
-import ProductImage from "/public/productView/productImage.png";
 import {
   CheckIcon,
   QuestionMarkCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
+import product from "@/components/server/product";
 
 export default function Page() {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -32,7 +32,7 @@ export default function Page() {
                   <div className="flex-shrink-0">
                     <Image
                       alt={item.imageAlt}
-                      src={ProductImage}
+                      src={product.imageSrc}
                       className="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
                     />
                   </div>
@@ -169,6 +169,9 @@ export default function Page() {
               >
                 Checkout
               </button>
+              <p className="mt-2 text-center text-sm">
+                payments managed by stripe!
+              </p>
             </div>
           </section>
         </form>
