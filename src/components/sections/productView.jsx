@@ -94,7 +94,7 @@ export default function ProductView() {
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium text-white"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent blueBg px-8 py-3 text-base font-medium darktext"
                 >
                   Add to cart
                 </button>

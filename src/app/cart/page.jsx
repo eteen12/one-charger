@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/20/solid";
 
 export default function Page() {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -46,7 +46,7 @@ export default function Page() {
                               href={item.href}
                               className="font-medium text-gray-700 hover:text-gray-800"
                             >
-                              {item.name}
+                              A charger
                             </a>
                           </h3>
                         </div>
@@ -66,16 +66,16 @@ export default function Page() {
                           id={`quantity-${idx}`}
                           name={`quantity-${idx}`}
                           className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
-                          defaultValue={item.quantity}
+                          value={item.quantity}
+                          onChange={(e) =>
+                            updateQuantity(item.id, parseInt(e.target.value))
+                          }
                         >
-                          <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
-                          <option value={4}>4</option>
-                          <option value={5}>5</option>
-                          <option value={6}>6</option>
-                          <option value={7}>7</option>
-                          <option value={8}>8</option>
+                          {[...Array(10).keys()].map((num) => (
+                            <option key={num + 1} value={num + 1}>
+                              {num + 1}
+                            </option>
+                          ))}
                         </select>
 
                         <div className="absolute right-0 top-0">
@@ -143,40 +143,21 @@ export default function Page() {
                     />
                   </a>
                 </dt>
-                <dd className="text-sm font-medium text-gray-900">$5.00</dd>
+                <dd className="text-sm font-medium text-gray-900">FREE</dd>
               </div>
-              <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="flex text-sm text-gray-600">
-                  <span>Tax estimate</span>
-                  <a
-                    href="#"
-                    className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500"
-                  >
-                    <span className="sr-only">
-                      Learn more about how tax is calculated
-                    </span>
-                    <QuestionMarkCircleIcon
-                      aria-hidden="true"
-                      className="h-5 w-5"
-                    />
-                  </a>
-                </dt>
-                <dd className="text-sm font-medium text-gray-900">$1.32</dd>
-              </div>
+
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <dt className="text-base font-medium text-gray-900">
                   Order total
                 </dt>
                 <dd className="text-base font-medium text-gray-900">
                   $
-                  {(
-                    cartItems.reduce(
+                  {cartItems
+                    .reduce(
                       (total, item) => total + item.quantity * item.price,
                       0
-                    ) +
-                    5 +
-                    1.32
-                  ).toFixed(2)}
+                    )
+                    .toFixed(2)}
                 </dd>
               </div>
             </dl>
@@ -184,7 +165,7 @@ export default function Page() {
             <div className="mt-6">
               <button
                 type="submit"
-                className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                className="w-full rounded-md border border-transparent blueBg px-4 py-3 text-base font-medium darkText shadow-sm "
               >
                 Checkout
               </button>

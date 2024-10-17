@@ -48,7 +48,9 @@ export default function ProductViewServer() {
         </h2>
 
         <div className="flex items-center">
-          <p className="text-lg sm:text-xl ralewayRegular">{product.price}</p>
+          <p className="text-lg sm:text-xl ralewayRegular">
+            {`$${product.price}`}
+          </p>
 
           <div className="ml-4 border-l border-gray-300 pl-4">
             <h2 className="sr-only">Reviews</h2>

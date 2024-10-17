@@ -17,27 +17,30 @@ const CartProvider = ({ children }) => {
   const addToCart = (item, selectedAmount) => {
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex((i) => i.id === item.id);
-
       if (existingItemIndex > -1) {
-        // If the item already exists in the cart, update its quantity
         return prevItems.map((currentItem, index) => {
           if (index === existingItemIndex) {
-            // Increment quantity based on the selected amount
             return {
               ...currentItem,
               quantity: currentItem.quantity + selectedAmount.quantity,
             };
           }
-          return currentItem; // Keep other items unchanged
+          return currentItem;
         });
       }
-
-      // If the item does not exist in the cart, add it with the selected quantity
       return [...prevItems, { ...item, quantity: selectedAmount.quantity }];
     });
   };
+
   const removeFromCart = (itemId) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+  };
+  const updateQuantity = (id, newQuantity) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
   };
 
   useEffect(() => {
@@ -50,6 +53,7 @@ const CartProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
+        updateQuantity,
       }}
     >
       {children}
