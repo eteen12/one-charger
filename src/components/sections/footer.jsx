@@ -1,8 +1,5 @@
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa6";
-import Image from "next/image";
 import Link from "next/link";
-
-import Logo from "/public/footer/logo.svg";
 
 const navigation = {
   solutions: [
@@ -45,16 +42,14 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 ">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 -mt-12">
-            <Image
-              src={Logo}
-              alt="Literally one charger logo"
-              width={100}
-              height={50}
-              className="h-16 -mb-2 md:h-20 md:-mb-4"
-            />
-
-            <p className="text-sm leading-6 text-gray-300 md:text-base max-w-[450px]">
+          <div className="space-y-8">
+            <h2
+              className="tracking-tighter mohave text-4xl md:text-5xl text-white"
+              style={{ "--font-weight": "900" }}
+            >
+              ONE
+            </h2>
+            <p className="text-sm leading-6 text-gray-300 md:text-base max-w-[450px] ralewayBold">
               Checkout my other projects on GitHub. If they arent privated... If
               your interested in my work, checkout{" "}
               <a
@@ -70,6 +65,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
+                  target="_blank"
                   className="text-white hover:text-gray-400"
                 >
                   <span className="sr-only">{item.name}</span>
@@ -81,7 +77,7 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white md:text-base">
+                <h3 className="text-sm font-semibold leading-6 text-white md:text-base ralewayBold">
                   Solutions
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -89,7 +85,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base"
+                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base ralewayRegular"
                       >
                         {item.name}
                       </a>
@@ -98,7 +94,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white md:text-base">
+                <h3 className="text-sm font-semibold leading-6 text-white md:text-base ralewayBold ">
                   Support
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -106,7 +102,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base"
+                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base ralewayRegular"
                       >
                         {item.name}
                       </Link>
@@ -117,24 +113,24 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white md:text-base">
+                <h3 className="text-sm font-semibold leading-6 text-white md:text-base ralewayBold">
                   Company
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <Link
+                      <a
                         href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base"
+                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base ralewayRegular"
                       >
                         {item.name}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white md:text-base">
+                <h3 className="text-sm font-semibold leading-6 text-white md:text-base ralewayBold">
                   Legal
                 </h3>
                 <ul role="list" className="mt-6 space-y-4 ">
@@ -142,7 +138,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base"
+                        className="text-sm leading-6 text-gray-300 hover:text-white md:text-base ralewayRegular"
                       >
                         {item.name}
                       </Link>

@@ -1,4 +1,4 @@
-import { FaPhone, FaEnvelope } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
 
 export default function Page() {
   return (
@@ -45,29 +45,15 @@ export default function Page() {
             <dl className="mt-10 space-y-4 text-base leading-7 ">
               <div className="flex gap-x-4">
                 <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  <FaPhone aria-hidden="true" className="h-7 w-6 " />
-                </dt>
-                <dd>
-                  <a
-                    href="tel:+1 (555) 234-5678"
-                    className="hover:text-gray-900 ralewayRegular"
-                  >
-                    &#55;&#55;&#56;&#45;&#53;&#56;&#49;&#45;&#57;&#49;&#53;&#49;
-                  </a>
-                </dd>
-              </div>
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
                   <span className="sr-only">Email</span>
                   <FaEnvelope aria-hidden="true" className="h-7 w-6 " />
                 </dt>
                 <dd>
                   <a
-                    href="mailto:hello@example.com"
+                    href="ethan@literallyonecharger.ca"
                     className="hover:text-gray-900 ralewayRegular"
                   >
-                    &#101;&#116;&#104;&#97;&#110;&#64;&#108;&#105;&#116;&#101;&#114;&#97;&#108;&#108;&#121;&#111;&#110;&#101;&#99;&#104;&#97;&#114;&#103;&#101;&#114;&#46;&#99;&#97;
+                    ethan@literallyonecharger.ca
                   </a>
                 </dd>
               </div>

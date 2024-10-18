@@ -10,20 +10,22 @@ export default function Hero() {
         <Image
           src={HeroMobile}
           className="object-contain"
-          alt="Background Image"
+          alt="Hero image of literally one charger, with large text and cable image"
           priority
           role="img"
           fill
+          sizes="(max-width: 768px) 100vw, 100vh"
         />
       </div>
       <div className="relative w-[100vw] h-[100vh] max-w-[800px] max-h-[800px] hidden md:block">
         <Image
           src={HeroDeskTop}
           className="object-cover"
-          alt="Background Image"
+          alt="Hero image of literally one charger, with large text and cable image"
           priority
           role="img"
           fill
+          sizes="(min-width: 768px) 100vw, 100vh"
         />
       </div>
     </div>

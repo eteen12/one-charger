@@ -1,7 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import NavBurger from "../reusables/navBurger";
-import Logo from "/public/navBar/logo.svg";
+
 import ProductViewNavCart from "../client/productViewNavCart";
 
 export default function NavBarServer() {
@@ -9,7 +8,10 @@ export default function NavBarServer() {
     <nav className="flex justify-between items-center  z-50 h-16 fixed w-[100%] px-5 lg:px-8 xl:px-12 2xl:px-20">
       <Link href="/" aria-label="Go to Plumbing homepage">
         <div className="relative">
-          <h2 className="tracking-tighter mohave text-4xl md:text-5xl" style={{ "--font-weight": "900" }}>
+          <h2
+            className="tracking-tighter mohave text-4xl md:text-5xl"
+            style={{ "--font-weight": "900" }}
+          >
             ONE
           </h2>
         </div>
@@ -22,7 +24,7 @@ export default function NavBarServer() {
       </div>
       <div className="hidden sm:flex items-center px-2 darkColor tracking-tighter ralewayBold">
         <ul className="flex items-center">
-          <Link href="/shop">
+          <Link href="/shop" rel="preload">
             <li className="ml-10 hover:border-b text-xl  md:text-2xl">Shop</li>
           </Link>
           <Link href="/contact">
@@ -31,9 +33,7 @@ export default function NavBarServer() {
             </li>
           </Link>
           <Link href="/">
-            <li className="ml-10 hover:border-b text-xl  md:text-2xl">
-              Home
-            </li>
+            <li className="ml-10 hover:border-b text-xl  md:text-2xl">Home</li>
           </Link>
           <Link href="/cart">
             <li className="ml-10 hover:border-b text-xl md:text-2xl relative">
