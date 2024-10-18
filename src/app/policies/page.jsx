@@ -26,7 +26,7 @@ export default function Page() {
       <h3 className="text-xl font-semibold mb-2">2. Use of the Website</h3>
       <p className="mb-4">
         You agree to use the website for lawful purposes and in a manner that
-        does not infringe the rights of, restrict, or inhibit anyone else's use
+        does not infringe the rights of, restrict, or inhibit anyone else&apos;s use
         and enjoyment of the website.
       </p>
 
