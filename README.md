@@ -6,7 +6,7 @@ A minimalistic eCommerce site dedicated to selling one high-quality charger. It'
 
 - Clean and minimalist design
 - User-friendly shopping experience
-- Secure payment processing
+- Secure payment processing ( it was until paypal took away my api key)
 - Mobile-responsive
 - Fast checkout process
 
