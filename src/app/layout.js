@@ -1,7 +1,8 @@
-import { Mohave,Raleway } from "next/font/google";
+import { Mohave, Raleway } from "next/font/google";
 import "./globals.css";
 import NavBarClient from "../components/client/navBarClient";
 import Footer from "../components/sections/footer.jsx";
+import { CartProvider } from "@/context/cart";
 
 const mohave = Mohave({
   subsets: ["latin"],
@@ -16,19 +17,19 @@ const raleway = Raleway({
 });
 
 export const metadata = {
-  title: "Literally One Charger | Ethan Breitkreutz",
+  title: "Literally One Charger | Teleta Development",
   description:
-    "Specializing in a phone chargers and accessories for Kelowna. Offering a affordable, high-quality, single cable.",
+    "Specializing in a phone charger for Kelowna, Canada, and British Columbia. Offering a affordable, high-quality, single cable.",
   keywords:
     "phone chargers, Kelowna, custom chargers, mobile accessories, affordable, quality, tech solutions",
-  author: "Ethan Breitkreutz",
+  author: "Teleta Development",
   charset: "UTF-8",
   og: {
     title: "Literally One Charger",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
     url: "https://www.LiterallyOneCharger.ca",
-    image: "https://www.LiterallyOneCharger.ca/one.png", // Update the image URL if necessary
+    image: "https://www.LiterallyOneCharger.ca/hero/heroMobile.png", // Update the image URL if necessary
     type: "website",
   },
   twitter: {
@@ -36,7 +37,7 @@ export const metadata = {
     title: "Literally One Charger",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
-    image: "https://www.LiterallyOneCharger.ca/one.png",
+    image: "https://www.LiterallyOneCharger.ca/hero/heroMobile.png",
   },
   schema: {
     "@context": "https://schema.org",
@@ -45,10 +46,10 @@ export const metadata = {
     url: "https://www.LiterallyOneCharger.ca",
     description:
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
-    image: "https://www.LiterallyOneCharger.com/oa.png", // Update the image URL if necessary
+    image: "https://www.LiterallyOneCharger.ca/hero/heroMobile.png", // Update the image URL if necessary
     sameAs: [
-      "https://www.facebook.com/EthanBreitkreutz", // Update these links as necessary
-      "https://www.instagram.com/ethan_breitkreutz/",
+      "https://m.facebook.com/TeletaDevelopment/", // Update these links as necessary
+      "https://www.instagram.com/teleta_development/",
       "https://www.linkedin.com/in/ethan-breitkreutz",
     ],
     potentialAction: {
@@ -73,21 +74,22 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
         <title>{metadata.title}</title>
         <link
-          rel="icon"
-          type="image/png"
-          href="/favicon/favicon-48x48.png"
-          sizes="48x48"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicon/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="A Charger" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <meta name="apple-mobile-web-app-title" content="A Charger." />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
         <link rel="manifest" href="/favicon/site.webmanifest" />
 
         <meta name="description" content={metadata.description} />
@@ -110,10 +112,12 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(metadata.schema) }}
         />
       </head>
-      <body className={`${mohave.variable} antialiased`}>
-        <NavBarClient />
-        {children}
-        <Footer />
+      <body className={`${mohave.variable} ${raleway.variable} antialiased`}>
+        <CartProvider>
+          <NavBarClient />
+          <div className="md:pt-16">{children}</div>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html{
-  overflow-x:hidden;
+html {
+  overflow-x: hidden;
 }
 
 :root {
-  --background: #d9d9d9;
+  --background: #f9fafb;
   --foreground: #2b2b2b;
   --font-mohave: "Raleway", sans-serif;
 }
@@ -14,7 +14,7 @@ html{
   font-family: var(--font-mohave);
   font-weight: var(--font-weight);
 }
-.mohaveHeader{
+.mohaveHeader {
   font-family: var(--font-mohave);
   font-weight: 700;
 }
@@ -24,7 +24,7 @@ html{
 }
 .ralewayRegular {
   font-family: var(--font-raleway);
-  font-weight: 400;
+  font-weight: 500;
 }
 .ralewayBold {
   font-family: var(--font-raleway);
@@ -37,7 +37,7 @@ html{
 .blueBg {
   background-color: #55ddc9;
 }
-.blueText{
+.blueText {
   color: #55ddc9;
 }
 .darkBg {

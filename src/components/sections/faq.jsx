@@ -22,22 +22,25 @@ const faqs = [
   {
     question: "Why did you make this site?",
     answer:
-      "Well, I need to improve my front end skills. And my backend ones. And my photoshop ones. Everything really.",
+      "Well, I need to improve my front end skills. And my photoshop ones. Everything really.",
   },
   {
     question: "Hey, dont you own Teleta Development?",
     answer:
-      "Yep, I do. I web develop, and will be starting up the business in the next few months. I'm just getting better first.",
+      "Yep, I do. I do web develop, and will be starting up the business in the next few months. I'm just getting better first.",
   },
-  // More questions...
+  {
+    question: "Are you a drop shipper?",
+    answer: "Get off my site.",
+  },
 ];
 
 export default function Faq() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50" id="faq">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-          <h2 className="text-2xl font-bold leading-10 tracking-tight mohaveHeader">
+          <h2 className="text-2xl font-bold leading-10 tracking-tight mohaveHeader sm:text-4xl ">
             Frequently asked questions
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -49,7 +52,7 @@ export default function Faq() {
               >
                 <dt>
                   <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
-                    <span className="text-base font-semibold leading-7">
+                    <span className="text-base font-semibold leading-7 md:text-lg">
                       {faq.question}
                     </span>
                     <span className="ml-6 flex h-7 items-center">
