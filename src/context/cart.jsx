@@ -12,6 +12,9 @@ const CartProvider = ({ children }) => {
       setCartItems(JSON.parse(savedCartItems));
     }
   }, []);
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (item, selectedAmount) => {
     setCartItems((prevItems) => {

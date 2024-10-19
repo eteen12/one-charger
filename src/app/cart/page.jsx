@@ -8,9 +8,13 @@ import {
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import product from "@/components/server/product";
+import PayPalButton from "@/components/reusables/payPalButton";
 
 export default function Page() {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+  const itemTotal = cartItems
+    .reduce((total, item) => total + item.quantity * item.price, 0)
+    .toFixed(2);
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -41,7 +45,10 @@ export default function Page() {
                     <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                       <div>
                         <div className="flex justify-between">
-                          <h3 href={item.href} className=" ralewayBold md:text-lg">
+                          <h3
+                            href={item.href}
+                            className=" ralewayBold md:text-lg"
+                          >
                             A charger
                           </h3>
                         </div>
@@ -80,7 +87,10 @@ export default function Page() {
                             className="-m-2 inline-flex p-2 hover:text-gray-500"
                           >
                             <span className="sr-only">Remove</span>
-                            <XMarkIcon aria-hidden="true" className="h-5 w-5 md:h-8 md:w-8" />
+                            <XMarkIcon
+                              aria-hidden="true"
+                              className="h-5 w-5 md:h-8 md:w-8"
+                            />
                           </button>
                         </div>
                       </div>
@@ -104,22 +114,17 @@ export default function Page() {
             aria-labelledby="summary-heading"
             className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
           >
-            <h2
-              id="summary-heading"
-              className="text-lg ralewayBold"
-            >
+            <h2 id="summary-heading" className="text-lg ralewayBold">
               Order summary
             </h2>
 
             <dl className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
-                <dt className="text-sm text-gray-600 ralewayRegular md:text-base">Subtotal</dt>
+                <dt className="text-sm text-gray-600 ralewayRegular md:text-base">
+                  Subtotal
+                </dt>
                 <dd className="text-sm ralewayRegular md:text-base">
-                  $
-                  {cartItems.reduce(
-                    (total, item) => total + item.quantity * item.price,
-                    0
-                  )}
+                  ${itemTotal}
                 </dd>
               </div>
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
@@ -146,27 +151,17 @@ export default function Page() {
                   Order total
                 </dt>
                 <dd className="text-base ralewayBold md:text-lg">
-                  $
-                  {cartItems
-                    .reduce(
-                      (total, item) => total + item.quantity * item.price,
-                      0
-                    )
-                    .toFixed(2)}
+                  ${itemTotal}
                 </dd>
               </div>
             </dl>
 
             <div className="mt-6">
-              <button
-                type="submit"
-                className="w-full rounded-md border border-transparent blueBg px-4 py-3 ralewayBold md:text-lg"
-              >
-                Checkout
-              </button>
-              <p className="mt-2 text-center text-sm ralewayRegular">
-                payments to stripe coming soon.
+              <p className="text-xs">
+                *Add the amount you want before clicking to pay. Or refresh
+                browser and try again*
               </p>
+              <PayPalButton itemTotal={itemTotal} />
             </div>
           </section>
         </form>
