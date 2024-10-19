@@ -16,8 +16,10 @@ const PayPalButton = ({ itemTotal }) => {
         "client-id": process.env.NEXT_PUBLIC_CLIENT_ID,
         currency: "CAD",
       }}
+    
     >
       <PayPalButtons
+      className="relative z-20"
         createOrder={(data, actions) => {
           setLoading(true);
           return actions.order.create({

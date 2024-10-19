@@ -161,7 +161,7 @@ export default function Page() {
                 *Add the amount you want before clicking to pay. Or refresh
                 browser and try again*
               </p>
-              <PayPalButton itemTotal={itemTotal} />
+              <PayPalButton itemTotal={itemTotal}/>
             </div>
           </section>
         </form>
