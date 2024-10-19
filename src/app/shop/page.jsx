@@ -1,16 +1,14 @@
 "use client";
-import "/src/app/globals.css";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { QuestionMarkCircleIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
-
-import product from "@/components/server/product";
 import ProductStaticContent from "@/components/server/productStaticContent";
-import { CartContext } from "/src/context/cart";
+import { CartContext } from "@/context/cart";
+import product from "@/components/server/product";
 
 export default function Page() {
   const [selectedAmount, setSelectedAmount] = useState(product.amounts[0]);

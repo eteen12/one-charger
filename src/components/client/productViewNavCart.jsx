@@ -10,12 +10,11 @@ export default function ProductViewNavCart() {
   return (
     <>
       <div className="relative w-6 h-5">
-        <FaCartShopping className="text-2xl -mt-1"/>
-      
+        <FaCartShopping className="text-2xl -mt-1" />
 
-      <span className="absolute -top-2 -right-3 bg-red-600 text-white text-base rounded-full w-5 h-5 flex justify-center items-center">
-        {itemCount > 0 ? itemCount : null}
-      </span>
+        <span className="absolute -top-2 -right-3 bg-red-600 text-white text-base rounded-full w-5 h-5 flex justify-center items-center">
+          {itemCount > 0 ? itemCount : null}
+        </span>
       </div>
     </>
   );
