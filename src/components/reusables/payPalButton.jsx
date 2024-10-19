@@ -29,8 +29,21 @@ const PayPalButton = ({ itemTotal }) => {
         }}
         onApprove={async (data, actions) => {
           const details = await actions.order.capture();
-          window.location.href = "/thank-you";
-          alert(`Transaction completed by ${details.payer.name.given}!`);
+
+          const response = await fetch("/api/verify", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ orderID: details.id }),
+          });
+
+          if (response.ok) {
+            alert(`Transaction completed by ${details.payer.name.given}!`);
+            window.location.href = "/thank-you";
+          } else {
+            alert("Transaction failed, please try again, or contact me.");
+          }
         }}
         onError={(err) => {
           console.error("Error during the transaction", err);
