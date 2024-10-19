@@ -61,7 +61,7 @@ export default function Page() {
           </div>
         </div>
         <form
-          action={process.env.REACT_APP_FORMSPREE_URL}
+          action={process.env.NEXT_PUBLIC_FORMSPREE_URL}
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
         >
