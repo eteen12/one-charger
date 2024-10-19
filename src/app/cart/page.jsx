@@ -161,7 +161,10 @@ export default function Page() {
                 *Add the amount you want before clicking to pay. Or refresh
                 browser and try again*
               </p>
-              <PayPalButton itemTotal={itemTotal}/>
+              <div className="flex justify-center mb-2 ralewayBold">
+                <h2>PLEASE NOTE: NO SHIPPING OUTSIDE OF CANADA!!</h2>
+              </div>
+              <PayPalButton itemTotal={itemTotal} />
             </div>
           </section>
         </form>

@@ -16,10 +16,9 @@ const PayPalButton = ({ itemTotal }) => {
         "client-id": process.env.NEXT_PUBLIC_CLIENT_ID,
         currency: "CAD",
       }}
-    
     >
       <PayPalButtons
-      className="relative z-20"
+        className="relative z-20"
         createOrder={(data, actions) => {
           setLoading(true);
           return actions.order.create({
@@ -36,12 +35,11 @@ const PayPalButton = ({ itemTotal }) => {
         onApprove={async (data, actions) => {
           try {
             const details = await actions.order.capture();
-            setLoading(false);
+
             window.location.href = "/thank-you";
             const payerName = details.purchase_units[0].shipping.name.full_name;
             alert(`Transaction completed by ${payerName}!`);
           } catch (error) {
-            setLoading(false);
             console.error("Error capturing the order", error);
             alert(
               "There was an error completing your transaction. Please try again."
@@ -49,7 +47,6 @@ const PayPalButton = ({ itemTotal }) => {
           }
         }}
       />
-      {loading && <div>Processing transaction...</div>}
     </PayPalScriptProvider>
   );
 };
