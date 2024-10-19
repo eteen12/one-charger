@@ -1,13 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 const PayPalButton = ({ itemTotal }) => {
+  const [loading, setLoading] = useState(false);
   const total = parseFloat(itemTotal);
 
   if (isNaN(total) || total <= 0) {
     return <div>Please add one or more items to your cart to checkout</div>;
   }
+
   return (
     <PayPalScriptProvider
       options={{
@@ -17,10 +19,12 @@ const PayPalButton = ({ itemTotal }) => {
     >
       <PayPalButtons
         createOrder={(data, actions) => {
+          setLoading(true);
           return actions.order.create({
             purchase_units: [
               {
                 amount: {
+                  currency_code: "CAD",
                   value: total,
                 },
               },
@@ -28,27 +32,22 @@ const PayPalButton = ({ itemTotal }) => {
           });
         }}
         onApprove={async (data, actions) => {
-          const details = await actions.order.capture();
-
-          const response = await fetch("/api/verify", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ orderID: details.id }),
-          });
-
-          if (response.ok) {
-            alert(`Transaction completed by ${details.payer.name.given}!`);
+          try {
+            const details = await actions.order.capture();
+            setLoading(false);
             window.location.href = "/thank-you";
-          } else {
-            alert("Transaction failed, please try again, or contact me.");
+            const payerName = details.purchase_units[0].shipping.name.full_name;
+            alert(`Transaction completed by ${payerName}!`);
+          } catch (error) {
+            setLoading(false);
+            console.error("Error capturing the order", error);
+            alert(
+              "There was an error completing your transaction. Please try again."
+            );
           }
         }}
-        onError={(err) => {
-          console.error("Error during the transaction", err);
-        }}
       />
+      {loading && <div>Processing transaction...</div>}
     </PayPalScriptProvider>
   );
 };
