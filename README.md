@@ -1,12 +1,13 @@
 # Literally One Charger
 
-A minimalistic eCommerce site dedicated to selling one high-quality charger. It's simple: literally one charger. Focused on simplicity, functionality, and speed. (yes accecibility will be fixed, as well as image sizing)
+A eccomerce site focused on a single product, with a focus on functionality and smoother user navigation. 
+This site uses PayPal SDK, and uses local storage for cart management.
 
 ## Features
 
-- Clean and minimalist design
+- Modern design
 - User-friendly shopping experience
-- Secure payment processing ( it was until paypal took away my api key)
+- Secure payment processing with PayPal
 - Mobile-responsive
 - Fast checkout process
 
@@ -15,5 +16,5 @@ A minimalistic eCommerce site dedicated to selling one high-quality charger. It'
 - **Next.js** - Frontend framework
 - **Tailwind CSS** - Styling
 - **JavaScript** - Main scripting language
-- **PayPal API** yeah but IT DOESNT WORK ( will be implimented soon)
+- **PayPal API** - Payment Gateway
 - **Vercel** - Deployment platform
