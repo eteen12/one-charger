@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "./node_modules/.bin/next start",
+    "postbuild": "next-sitemap",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,7 +14,8 @@
     "@heroicons/react": "^2.1.5",
     "@paypal/react-paypal-js": "^8.7.0",
     "classnames": "^2.5.1",
-    "next": "^14.2.15",
+    "next": "^15.0.2",
+    "next-sitemap": "^4.2.3",
     "prop-types": "^15.8.1",
     "react": "^18",
     "react-dom": "^18",

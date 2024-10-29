@@ -9,6 +9,7 @@ const navigation = {
   support: [{ name: "Contact", href: "/contact" }],
   company: [
     { name: "Teleta Development", href: "https://TeletaDevelopment.com" },
+    { name: "Stoic Quotes", href: "https://www.StoicQuotes.ca" },
   ],
   legal: [
     { name: "Privacy policy", href: "/policies" },
