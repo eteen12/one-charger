@@ -48,9 +48,11 @@ export const metadata = {
       "Literally One Charger is a place to buy a phone charger in kelowna and canada. Offering a affordable, high-quality, single cable.",
     image: "https://www.LiterallyOneCharger.ca/hero/heroMobile.png", // Update the image URL if necessary
     sameAs: [
-      "https://m.facebook.com/TeletaDevelopment/", // Update these links as necessary
-      "https://www.instagram.com/teleta_development/",
+      "https://www.facebook.com/TeletaDevelopment",
+      "https://www.instagram.com/Teleta_Development/",
       "https://www.linkedin.com/in/ethan-breitkreutz",
+      "https://www.youtube.com/@TeletaDevelopment",
+      "https://github.com/eteen12",
     ],
     potentialAction: {
       "@type": "SearchAction",
