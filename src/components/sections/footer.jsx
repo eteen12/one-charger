@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const navigation = {
   solutions: [
-    { name: "Web Development", href: "https://TeletaDevelopment.com" },
-    { name: "Website SEO", href: "https://TeletaDevelopment.com" },
+    { name: "Web Development", href: "https://ethanbdev.com" },
+    { name: "Website SEO", href: "https://ethanbdev.com" },
   ],
   support: [{ name: "Contact", href: "/contact" }],
   company: [
-    { name: "Teleta Development", href: "https://TeletaDevelopment.com" },
+    { name: "Ethan Breitkreutz", href: "https://ethanbdev.com" },
     { name: "Stoic Quotes", href: "https://www.StoicQuotes.ca" },
   ],
   legal: [
